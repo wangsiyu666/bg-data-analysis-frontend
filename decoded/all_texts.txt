@@ -1,0 +1,2919 @@
+首页
+渠道情况
+企业经验数字看板顶端菜单栏
+rbpUTQLp6FfyXus8A
+CURRENT_BASKET_REF
+运营评估
+( , fontweight-400
+rbpUTP8hWqvt4tNfA
+客群运营
+产品运营
+rbpUSk3bryNv4aWPH
+rbpURnlzdQLZpk37v
+客群分析
+2026年6月2日 星期一  10:18:35
+( ? color-rgba(96,97,98,0.83)
+( * fontweight-700
+TeleCompass智能运营
+( 7 fontweight-700
+线条 1 Copy 15
+矩形 1
+矩形 1 Copy 1
+矩形 1 Copy 2
+矩形 1 Copy 3
+2026年运营用户数
+( 2 fontsize-14
+iconPark-positive-dynamics
+5,134 万
+( . fontweight-700
+16.8%
+( - fontweight-400
+18.5 %
+( . color-rgba(255,255,255,1)
+同2025年的数据比较有显著提升
+( 8 fontweight-400
+md-forward
++26.8 %
+( / fontweight-400
+矩形 3 Copy 4
+转化率
+( + color-rgba(249,249,249,1)
+if-law-alt-2
+25.1%
+同2025年比运营用户覆盖率显著提升
+( : fontweight-400
+md-forward Copy 1
++10.3 %
+矩形 3 Copy 5
+ROI提升率
+( . color-rgba(249,249,249,1)
+mb-users
+35.3%
+md-forward Copy 2
+-8.2 %
+( . fontweight-400
+矩形 3 Copy 6
+AI策略生成率
+( / color-rgba(249,249,249,1)
+md-forward Copy 3
+线条 1
+折线图 1 Copy 2
+电子渠道
+( , fontsize-20
+矩形 2
+ARPU提升
+( . fontsize-14
+1,080 万
+( / color-rgba(255,98,0,1)
+线条 1 Copy 4
+环形图 1
+同比增长
+( , fontsize-14
++23.1 %
+( - fontsize-28
+线条 1 Copy 5
+目标达成率
+( - fontsize-14
+折线图 1 Copy 4
+运营用户量
+316 万
+( - color-rgba(255,98,0,1)
+线条 1 Copy 6
+价值贡献率
+( , fontsize-28
+线条 1 Copy 7
+2022
+( , color-rgba(242,242,242,1)
+2023
+2024
+矩形 1 Copy 18
+矩形 1 Copy 20
+矩形 1 Copy 23
+矩形 1 Copy 24
+线条 1 Copy 8
+2020    2021    2022    2023   2024
+( K fontweight-400
+矩形 1 Copy 25
+实体渠道
+2,566 万
++15.2 %
+520 万
+11.4 %
+矩形 1 Copy 26
+外呼渠道
+982 万
+-21.4 %
+126 万
+-12.1 %
+矩形 1 Copy 27
+总体情况
+711 万
+-16.9 %
+108 万
+-30.2 %
+APP
+( + fontweight-400
+公众号
+小程序
+其他
+( * fontweight-400
+矩形 1 Copy 28
+矩形 1 Copy 29
+矩形 1 Copy 30
+矩形 1 Copy 31
+城市
+自有
+校园
+代理
+矩形 1 Copy 32
+矩形 1 Copy 33
+农村
+矩形 1 Copy 35
+矩形 1 Copy 36
+矩形 1 Copy 37
+电子外呼
+人工外呼
+矩形 1 Copy 38
+矩形 1 Copy 39
+矩形 1 Copy 40
+矩形 1 Copy 42
+外呼
+环形图 1 Copy 1
+线条 1 Copy 9
+线条 1 Copy 10
+群组 1
+矩形 3
+线条 1 Copy 13
+线条 1 Copy 12
+线条 1 Copy 11
+环形图 1 Copy 2
+3578 个
+策略数量
+( , lineheight-29px
+AI运营情况对比图（2026年）
+( 8 fontsize-16
+fas fa-chart-bar
+16.9%
+( - color-rgba(51,51,51,1)
+营收同比增长
+( . lineheight-20px
+25.6%
+人工运营
+( , fontsize-16
+人工运营是利用信息化系统及人工经验开展的全流程分节点运营
+( D fontsize-12
+矩形 1 Copy 5
+AI运营
+( , fontsize-12
+矩形 1 Copy 44
+直营门店
+AI运营特点
+( . fontsize-16
+利用AI智能体技术贯穿操作
+( 5 fontsize-12
+482 万
+( - color-rgba(255,255,255,1)
+ARPU提升量
+( / lineheight-29px
+58 %
+( , color-rgba(255,255,255,1)
+触达率
+( + lineheight-29px
+35 %
+23 %
+329 万
+105 个
+39 %
+渠道AI策略执行情况分析（2026年）
+( ; fontsize-16
+md-pie_chart
+线条 1 Copy 14
+各渠道对AI策略执行情况进行对比分析
+( : fontsize-12
+折线图 1 Copy 6
+折线图 1 Copy 7
+79.2 %
+折线图 1 Copy 8
+55.4 %
+折线图 1 Copy 9
+36.8 %
+折线图 1 Copy 10
+85.6 %
+折线图 1 Copy 11
+折线图 1 Copy 12
+折线图 1 Copy 13
+折线图 1 Copy 14
+环形图 1 Copy 3
+42.6%
+价值提升情况分析（2026年）
+( 7 fontsize-14
+通过AI营销快速迭代能力，促进本地客户价值保有与提升显著提升
+( F fontsize-12
+箭头 1
+提升 62%
+电子类渠道策略执行与转化显著提升
+( 8 color-rgba(96,97,98,0.83)
+箭头 1 Copy 1
+提升 0.3%
+( / fontweight-700
+传统外呼受制外呼能力提升不足
+( 6 color-rgba(96,97,98,0.83)
+箭头 1 Copy 2
+提升 0.5%
+公众号提升有限
+( / color-rgba(96,97,98,0.83)
+箭头 1 Copy 3
+提升 78%
+短信具备快速营销属性，利用AI营销显著提升
+( = color-rgba(96,97,98,0.83)
+( + color-rgba(255,255,255,1)
+( * color-rgba(255,255,255,1)
+短信
+线条 1 Copy 16
+线条 1 Copy 17
+线条 1 Copy 18
+同2025年的比AI策略生成量提升显著
+( ; fontweight-400
+( , lineheight-20px
+推广效果
+( , fontweight-700
+rbpUQWoe3JyC5dbn7
+( * fontsize-20
+( 7 fontsize-28
+矩形 1 Copy 6
+矩形 1 Copy 41
+你好！我是客群分析小助手
+( 4 fontweight-400
+雷达图 1
+2026
+入网期
+( + fontsize-20
+成长期
+成熟期
+异动期
+离网期
+35.18W
+( . fontsize-20
+42.16W
+35.21W
+16.82W
+23.78W
+口径：在网时长<6个月
+( 3 fontsize-16
+口径：在网时长<18个月
+( 4 color-rgba(51,51,51,1)
+口径：在网时长<36个月
+口径：在网时长<60个月
+口径：沉默、状态非100等
+( 5 fontsize-16
+折线图 1 Copy 15
+折线图 1 Copy 16
+折线图 1 Copy 17
+折线图 1 Copy 18
+折线图 1 Copy 19
+入网
+成长
+成熟
+异动
+离网
+全生命周期分布
+( / fontsize-28
+矩形 1 Copy 7
+全生命周期市衡量用户价值曲线和差异性运营的直接指标
+( A fontsize-12
+345
+( + color-rgba(51,51,51,1)
+758
+234
+112
+34
+( * color-rgba(51,51,51,1)
+83.7%
+98
+78
+56
+( * lineheight-20px
+    向小助手提客群分析问题，例如分析ARPU>89客客群
+, B color-rgba(79,79,79,0.99)
+线条 1 Copy 1
+线条 1 Copy 2
+线条 1 Copy 3
+按钮2 1
+分析语义
+( , lineheight-17px
+矩形 2 Copy 1
+select city_id,user_online ,sex_id,count(*) from ***  where arpu>80 ; 
+按钮2 1 Copy 1
+确定统计
+标记/小红点1 Copy 2
+矩形 4
+表格-无内横线表格 1 Copy 1
+分页-带数据总量显示 Copy NBIhnI3 Copy 1
+文本 ruqNMpq
+共 658 项数据
+( 1 color-rgba(0,0,0,0.6)
+矩形 2 Copy 19 Y9gJ7nj
+矩形 2 Copy 18 G8GTGOg
+矩形 2 Copy 17 mwR5Rci
+50
+arcoDesign-left Copy kIeW1wf
+arcoDesign-right Copy GvjNbYI
+矩形 2 Copy 16 dSse1Mw
+90
+矩形 2 Copy 15 7oTRY1l
+矩形 2 Copy 14 BNZMr3m
+54
+矩形 2 Copy 13 z8GGcwU
+53
+矩形 2 Copy 12 e2bmooy
+52
+矩形 2 Copy 11 b147RUb
+51
+矩形 Copy 2 FO3jiog
+高价值用户
+( - color-rgba(0,0,0,1)
+低价值
+( + color-rgba(0,0,0,1)
+按钮 1
+矩形 GGwv1lR
+文本 2txx1e0
+保存客群
+( , color-#ffffff
+按钮 1 Copy 1
+多维分析
+表格 1
+情况总览
+footer
+div
+span
+5G尊享权益周
+正在进行中活动:
+触达进度 (854,203 / 1,000,000)
+85
+85.4%
+实时转化率
+6.24%
+FRAME
+异常告警: 外呼转化低于均值
+button
+最佳推送时刻推荐：19:00 - 21:00 Copy 1
+最佳推送时刻推荐：19:00 - 21:00
+div Copy 1
++ 4 Copy 1
++ 4.2月
+在网时长(YoY) Copy 1
+在网时长(YoY)
+FRAME Copy 2
+button Copy 2
+下一页
+button Copy 1
+上一页
+操作 Copy 1
+操作
+span Copy 1
+15
+FRAME Copy 1
+canvas
+用户触达疲劳度分析
+重新生成建议
+限时紧急型
+场景驱动型
+情感共鸣型
+AI 最佳话术生成器
+“您的流量已消耗80%，领取假日专属视频流量包，随心刷抖音，再也不用担心流量超标
+“您的流量已消耗80%，领取假日专属视频流量包，随心刷抖音，再也不用担心流量超标...”
+7.2% CTR
+流量激趣
+“宽带服务即将到期，为保证您的网络畅通，现推出老用户专享5折续费活动，点击链接立即预约上门提速
+“宽带服务即将到期，为保证您的网络畅通，现推出老用户专享5折续费活动，点击链接立即预约上门提速...”
+9.4% CTR
+到期续约
+“尊敬的客户，您的号码符合尊享5G权益升级资格，现在办理即刻获赠20GB流量，不增加额外套餐费用
+“尊敬的客户，您的号码符合尊享5G权益升级资格，现在办理即刻获赠20GB流量，不增加额外套餐费用...”
+12
+12.8% CTR
+5G升级
+- 34
+- 34.2%
+流量超套率
++ 45 min
+MOU 增长
++ ￥12
++ ￥12.4
+ARPU 提升
+终端品牌分布
+用户类型响应
+地区响应差异
+ul
+li
+覆盖面最广，但单客ROI较低。
+流量激发策略
+具有最高的客户满意度得分。
+会员升级计划
+在转化率上表现最为均衡。
+5G挽留策略
+核心结论总结：
+全球通尊享会员升级
+低ARPU用户流量激发
+5G套餐流量包挽留策略
+当前对比项 (已选3个)
+不同渠道转化率对比
+select
+转化率/ROI/接通率 变化趋势
+tr
+89
+89.6%
+4.8x
+APP推送
+2026-04-03 14:30
+5G高清通话(VoNR)推广
+42
+42.1%
+7.3x
+9.56%
+智能外呼
+2026-04-04 10:00
+高价值用户积分到期提醒
+93
+93.9%
+1.5x
+1.82%
+短信营销
+2026-04-05 15:20
+沉默老用户回归代金券
+94
+94.2%
+2.1x
+22
+22.4%
+2026-04-06 08:30
+校园网开学季流量赠送
+96
+96.8%
+5.4x
+4.12%
+2026-04-07 11:00
+家庭共享号办理激励
+48
+48.3%
+6.8x
+15.2%
+2026-04-08 09:15
+定向流量包超套预警转化
+90.1%
+12.2x
+8.90%
+2026-04-09 16:45
+全球通尊享会员升级计划
+95
+95.4%
+3.5x
+2.15%
+2026-04-10 10:20
+低ARPU用户流量激发活动
+45
+45.2%
+8.1x
+12.4%
+2026-04-11 14:00
+宽带续约到期提醒-波次1
+88
+88.5%
+4.2x
+5.82%
+2026-04-12 09:30
+接通率
+ROI
+渠道
+执行时间
+策略名称
+input
+156
+2.1%
+5.84
+8.2%
+12.5%
+推送时机(24h)转化率
+波次转化效果分析
+热点话术 CTR 排行
+策略执行后 7 日内平均数据波动情况
+通信行业核心 KPI 关联洞察
+转化效果热力图 (时段 vs 星期)
+策略类别分布及其贡献比
+共 156 个策略，显示前 10 个
+最近执行策略
+活跃策略占比 72
+活跃策略占比 72.4%
+活动执行次数
+累计成功下发率 98
+全省用户覆盖率  23.12%
+1,284,502
+总触达用户数
+总触达用户次数
+平均 ROI
+4.32%
+平均转化率
+整体运营健康度核心指标（近30天数据）
+策略效果总览
+执行计划全链路分析
+h2
+话术效果分析
+客群深度洞察
+策略深度对比
+趋势多维分析
+body
+条状图 1
+我是你的运营小助手，请提问！可以说明重新帮我参照最佳案例排行榜TOP3重新生成““尊敬的客户，您的号码符合尊享5G权益升级资格，现在办理即刻获赠20GB流量，不增加额外套餐费用...””这个话术，并给出改善意见和原因
+P ] ITALIC
+群组 9
+input Copy 1
+setp3
+( - fontweight-700
+setp1
+setp2
+矩形 2 Copy 2
+小助手一直都在哦，有其他补充可以在这里说明
+button Copy 19
+取消圈选
+button Copy 18
+确定圈选
+上传-拖拽上传 1
+antOutline-cloud-upload WsxLuED
+文本 j9xZ7sI
+将用户清单文件拖到此处，或点击上传
+( 5 color-#101010
+文本 WvXB56p
+只能上传csv/exl文件，且不超过500kb
+( ? color-#101010
+矩形 Copy 3 OkgKDHV
+button Copy 17
+button Copy 16
+群组 6
+环形图 1 Copy 36
+环形图 1 Copy 35
+环形图 1 Copy 34
+环形图 1 Copy 33
+环形图 1 Copy 32
+环形图 1 Copy 31
+环形图 1 Copy 30
+环形图 1 Copy 29
+环形图 1 Copy 28
+环形图 1 Copy 27
+环形图 1 Copy 26
+环形图 1 Copy 25
+环形图 1 Copy 24
+环形图 1 Copy 23
+环形图 1 Copy 22
+环形图 1 Copy 21
+环形图 1 Copy 20
+环形图 1 Copy 19
+环形图 1 Copy 18
+环形图 1 Copy 17
+环形图 1 Copy 16
+环形图 1 Copy 15
+环形图 1 Copy 14
+环形图 1 Copy 13
+环形图 1 Copy 12
+环形图 1 Copy 11
+环形图 1 Copy 10
+环形图 1 Copy 9
+环形图 1 Copy 8
+环形图 1 Copy 7
+环形图 1 Copy 6
+环形图 1 Copy 5
+环形图 1 Copy 4
+目前客群量
+button Copy 14
+button Copy 13
+button Copy 12
+button Copy 11
+用户清单方式
+( . color-rgba(0,0,0,1)
+产品推荐客群方式
+( 0 color-rgba(0,0,0,1)
+iconPark-user-positioning
+antOutline-appstore
+button Copy 4
+开始计算
+多选 1 Copy 4
+矩形 gealzK2
+div Copy 3
+      请输入种子用户的电话号、user_id，并使用“,”分割。
+种子用户扩散方式
+riLine-service-line
+div Copy 2
+多选菜单 1
+图标 2 G5Letzq Copy 1
+图标 2 G5Letzq
+文本 kHh8qLy
+用户流失客群2
+( / color-#5a5e66
+文本 jXbcPkp
+用户流失客群1
+( / color-#1989fa
+文本 paPmCEW
+新入网用户运营客群2
+( 2 color-#5a5e66
+文本 Ar8glz2
+流量流失客群2
+文本 7Vfjp2w
+文本 q72pKZm
+价值提升客群2
+文本 m9ejFkB
+价值提升客群1
+三角形 qY7xmCr
+矩形 Jf5Rc4q
+多选 1 Copy 2
+多选 1 Copy 1
+多选 1
+多选框-多选框组 1
+iconPark-blockchain
+口径（特征组合）方式
+( 2 color-rgba(0,0,0,1)
+主推话术: Copy 3
+产品描述:
+目标群体: Copy 3
+适用范围:
+基本月费: Copy 3
+产品售价:
+主推话术: Copy 2
+目标群体: Copy 2
+基本月费: Copy 2
+主推话术: Copy 1
+目标群体: Copy 1
+基本月费: Copy 1
+文本框 1
+单行输入 AgA3Oef
+矩形 mGkBms5
+输入产品信息
+开始分析
+我是你的产品运营小助手，请提问！可以说明你要运营的目标、运营的产品等信息
+你好！我是你的运营小助手
+0.925
+1:8
+1:8.4
+0.142
+方案 A (体验导向)
+方案 B (价格敏感型)
+AI 多版本话术对比
+基于历史转化率: 14
+基于历史转化率: 14.5%
+APP强推+短信
+预计接通/触达率
+预测投资回报率 (P-ROI)
+预测转化率 (P-CVR)
+适用条件说明
+策略类别
+执行渠道与话术
+策略内容详细配置
+按网龄
+按ARPU
+按地区
+行业均值: 1:5
+活跃度最高，建议定点下发。
+AI 结论：该客群在
+周三 12:00-13:30
+周日
+周六
+周五
+周四
+周三
+周二
+周一
+激进 (4次)
+标准
+保守 (1次)
+2 次 / 月
+营销频率 (月度上限)
+【2026致礼】尊敬的客户，您的流量已亮红灯！现特邀体验5G极速包，50G仅29元，首月不花钱，看电影刷视频再也不用算着花，回复数字1即刻畅享！
+预计转化率: 5
+预计转化率: 5.8%
+预计转化率: 4
+预计转化率: 4.2%
+尊敬的客户，给您省钱了！您上月流量已超支，办理29元5G特惠包可比直接扣费省下80%，更赠送视频会员，退订回复TD，回复Y办理。
+重新生成
+成本较高，适合犹豫客群
+外呼坐席 (10086)
+主推渠道
+2,148,590
+有效库内人数
++￥24
++￥24.65 /月
+预计ARPU提升值:
+获赠3个月黄金会员权益(爱奇艺/腾讯任选)
+权益内容:
+长期有效 (客户不取消不失效)
+小合约升千兆10元包
+有效期:
+关联产品:
+预付费账户次月扣费
+扣费方式:
+扣费比例:
+29元含50G全国通用流量，首月免费
+资费描述:
+策略描述:
+label
+存量升档场景
+各维度指标预测与趋势分析 (历史对比)
+数据源: PostgreSQL_Prod
+AI 最佳营销时刻建议
+客群规模确认
+策略详细描述 (活动政策)
+textarea
+策略执行效果预测大屏
+营销调度设置
+符合业务合规
+智能运营策略生成
+入网时长 (网龄)
+客群分析结果所搜
+12,584,203
+多维客群精准圈选
+已圈选目标客户规模
+基于实时大数据平台，通过多维标签筛选目标转化潜力客户。
+群组 8
+AI 正在优化方案中
+开始生成策略
+( . lineheight-39px
+选择该产品
+查看详情
+专属管家服务
+高流量超支用户
+￥299
+￥299.00
+套餐升档类
+5G畅享299档位升级
+全网追剧不设限
+视频偏好客群
+￥15
+￥15.00
+增值业务类
+优酷/腾讯双会员权益
+智慧家庭升级
+单产品老客户
+￥169
+￥169.00
+家庭融合类
+千兆宽带+全屋WiFi
+5G全速体验
+主推话术:
+低流量高ARPU
+目标群体:
+￥29
+￥29.00
+基本月费:
+流量升档类
+5G尊享流量包(50G)
+新增产品
+( , lineheight-23px
+历史方案导入
+查询
+( * fontsize-18
+核心产品库选择
+产品库选择产品
+选择本次运营活动的目标产品，支持5G套餐、权益包及宽带融合业务。
+我是你的运营小助手，请提问！可以说明你要运营的目标、运营的产品等信息
+群组 8 Copy 1
+产品推荐
+( , lineheight-39px
+画布 7
+页面 1
+矩形 2 Copy 21
+矩形 2 Copy 22
+矩形 2 Copy 23
+矩形 2 Copy 24
+矩形 2 Copy 25
+矩形 2 Copy 26
+85.3 %
+对特点进行简短的描述，说明原因和措施
+( : color-rgba(96,97,98,0.83)
+职位符合度所下降
+( 0 lineheight-20px
+mb-tri-arrow-down Copy 1
+矩形 2 Copy 9
+矩形 2 Copy 10
+( ) fontweight-400
+ze-smile-o
+96.4 %
+( . color-rgba(51,51,51,1)
+员工满意度达到90%以上为合格比准，员工对企业的环境表示认可，对企业的发展有信心。
+( Q color-rgba(96,97,98,0.83)
+antFill-check-circle 1
+矩形 2 Copy 11
+矩形 2 Copy 12
+ze-cashier-o
+45.9 %
+antFill-check-circle 1 Copy 1
+矩形 2 Copy 13
+矩形 2 Copy 14
+ze-clock-o
+7.5 %
+培训时长率达到5%以上为合格比准，员工在企业接收的技能和教育有一定的保障，能提供岗位所需能力支持。
+( Y color-rgba(96,97,98,0.83)
+antFill-check-circle 1 Copy 2
+矩形 2 Copy 15
+矩形 2 Copy 16
+ze-friends-o
+5.6 %
+员工离职率控制在5%以下为合格比准，员工流动性增加，梯队建设和稳定性超过预警值，需要关注。
+( U color-rgba(96,97,98,0.83)
+antFill-exclamation-circle
+矩形 2 Copy 17
+2,232 人
+2024年底统计
+( 0 fontsize-14
+对人员下降进行简短的描述，包括类型分类的数量，说明原因和措施。
+( G color-rgba(96,97,98,0.83)
+数量有所下降
+mb-tri-arrow-down Copy 2
+矩形 2 Copy 18
+( ) fontsize-18
+矩形 2 Copy 19
+43%
+47.3%
+9.7%
++ 109
+( - lineheight-23px
+mb-tri-arrow-up 1
+- 240
+mb-tri-arrow-down
+fas fa-male Copy 1
+fas fa-male Copy 2
+fas fa-male Copy 3
+fas fa-male Copy 4
+fas fa-male Copy 5
+fas fa-male Copy 6
+fas fa-male Copy 7
+fas fa-male Copy 8
+fas fa-male Copy 9
+fas fa-male Copy 10
+fas fa-male Copy 11
+fas fa-male Copy 12
+fas fa-male Copy 13
+- 58
+折线图 1 Copy 3
+漏斗图 1
+antOutline-info-circle
+2023年
+( - color-rgba(96,97,98,0.83)
+职级体系
+( , color-rgba(96,97,98,0.83)
+折线图 1 Copy 5
+近3年人均效能每月趋势对比图
+( 6 fontweight-700
+fa5-chart-line-fas 1
+同比
+圆形 1
+环比
+圆形 1 Copy 1
+差额
+圆形 1 Copy 2
+矩形 2 Copy 20
+分析说明 01
+对增长和下降情况进行简要说明，主要阐述比例情况以及原因。
+( D color-rgba(96,97,98,0.83)
+分析说明 02
+分析说明 03
+进度圆环 1 Copy 2
+效能构成 01
+15.6 万
+arcoDesign-arrow-rise
+ze-balance-list-o
+效能构成 02
+10.2 万
+arcoDesign-arrow-rise Copy 1
+ze-balance-pay
+4.8 万
+arcoDesign-arrow-rise Copy 2
+ze-gold-coin-o
+线条 2 Copy 3
+￥30.6 万
+线条 2 Copy 4
+72% 目标达成
+人均效能
+对目标完成情况进行简短的描述和说明，包括原因和措施。
+( B color-rgba(96,97,98,0.83)
+圆形 1 Copy 3
+圆形 1 Copy 4
+圆形 1 Copy 5
+效能构成 03
+员工关心热词频次
+( 0 color-rgba(51,51,51,1)
+知识热词
+( , fontweight-300
+153次
+128次
+101次
+67次
+( + fontweight-300
+95次
+117次
+矩形 1 Copy 8
+108次
+矩形 1 Copy 9
+89次
+矩形 1 Copy 11
+54次
+矩形 1 Copy 13
+88次
+矩形 1 Copy 15
+矩形 1 Copy 16
+矩形 1 Copy 17
+34次
+矩形 1 Copy 19
+对效能构成01进行简短的描述和说明，包括构成的主要考虑因素和计算方式。
+( K fontsize-12
+对效能构成02进行简短的描述和说明，包括构成的主要考虑因素和计算方式。
+对效能构成03进行简短的描述和说明，包括构成的主要考虑因素和计算方式。
+画布 6
+矩形 2 Copy 8
+矩形 2 Copy 7
+矩形 2 Copy 6
+矩形 2 Copy 5
+if-refresh
+库存周转
+本期
+( * color-rgba(96,97,98,0.83)
+32 天
+( , color-rgba(51,51,51,1)
+同期
+30天
+( + color-rgba(96,97,98,0.83)
+arcoDesign-thumb-up
+客户满意度
+95.1 %
+94.3%
+矩形 1 Copy 10
+if-cart
+采购周期
+21 天
+28天
+arcoDesign-arrow-rise Copy 3
+交货天数
+45 天
+53天
+arcoDesign-arrow-rise Copy 4
+折线图 1 Copy 30
+折线图 1 Copy 29
+折线图 1 Copy 28
+折线图 1 Copy 27
+对升降的比例进行简短的描述，说明数字增长的原因。
+( @ color-rgba(96,97,98,0.83)
+客群圈选
+对目前供应商分布情况进行简要描述，已经对不同供应商的采购额特点进行说明，以及在2020年-2024年的5年内的趋势；特别是头部的前10名供应商情况在2020年-2024年的5年内的趋势进行简要描述。
+( )5 color-rgba(51,51,51,1)
+mb-design
+antOutline-schedule
+antOutline-database
+iconPark-workbench
+连接线 1
+7i/6!7g/.!h
+连接线 1 Copy 1
+7g/.!7g/.!h
+连接线 2
+7g/.!7hAg!h
+待运营客群的圈选
+( 0 fontweight-400
+特点1：对特点进行简短的描述，说明数字增长的原因
+( @ fontsize-12
+圆形 2
+圆形 2 Copy 1
+圆形 2 Copy 2
+2022年
+( - lineheight-14px
+2024年
+流程及时率
+10.4%
+( , lineheight-50px
+计划完成率
+( - fontsize-20
+8.5%
+( + lineheight-50px
+Product Operations Flow
+( ? fontweight-400
+产品运营流
+对客户满意度升降的比例进行简短的描述，说明数字增长的原因。
+( E color-rgba(96,97,98,0.83)
+折线图 1 Copy 24
+对计划及时率升降的比例进行简短的描述，说明数字增长的原因。
+近3年平台运转效率每月趋势对比图
+产品运营副本
+background.png
+title.png
+borderTop.png
+大主题外框2.png
+大主题外框3.png
+rightTitle.png
+titleOn.png
+按钮选取框.png
+title1.png
+去掉球抬头按钮选取框.png
+selected.png
+大框外形上.png
+大框外形下.png
+bg.png
+小框外形B款上.png
+小框外形B款下.png
+小框半透明底色.png
+1.png
+边框拉线.png
+borderBottom.png
+蓝色按钮（两个字).png
+橙色按钮（两个字).png
+huise.png
+蓝色按钮（四个字).png
+图片1.png
+image.png
+87c681dd-0625-4488-89ed-bd020c698873.png
+92baeede-6cda-492b-80f0-732c8787a4b4.png
+无线01.png
+Frame 1321314983.png
+Group 1321314712.png
+B端大屏数据可视化素材内的花瓣采集图片-ly起风了.png
+小标题背景.png
+圆形科技感边框.png
+科技感光线png (2).png
+空间网格+光束.png
+互联科技城市.png
+157bc7d5-3893-46a7-afc5-b7b246a1f74e.png
+无线02.png
+绿色按钮（两个字).png
+幻灯片1.PNG
+幻灯片2.PNG
+幻灯片3.PNG
+云装配介绍20171213.png
+01.png
+02.png
+36.png
+04.png
+14.png
+35.png
+45.png
+15.png
+27.png
+16.jpg
+24.png
+34.png
+23.jpg
+09.jpg
+11.jpg
+19.jpg
+20.jpg
+08.jpg
+12.jpg
+40.jpg
+31.jpg
+38.jpg
+17.jpg
+22.jpg
+29.jpg
+44.jpg
+18.jpg
+2_77bd5fb1-00f7-4b77-a3a3-7e3259a47454.JPG
+61402eff718cc.jpg
+2021031816300536.png
+0ddf3446c7184be78a9cd9eaa02675fe_8.jpg
+u=2428611673,2540836122&fm=253&fmt=auto&app=138&f=PNG.jpg
+26.jpg
+25.jpg
+30.jpg
+32.jpg
+企业经营数字看板
+销售指标
+( 0 fontweight-700
+md-polymer
+市场营销
+供应链管理
+人力资源
+财务数据
+2024年9月2日 星期一  10:18:35
+状态 1
+查询语句
+表格 1 Copy 2
+path
+circle
+ellipse
+input.w-full bg-white border border-slate-200 rounded-lg p-3 text-sm
+2026年Q2存量用户5G流量升档专项营销计划
+textarea.w-full bg-white border border-slate-200 rounded-lg p-3 text-sm text-slate-600
+1. 主套餐费用在58-128元之间的4G/5G用户；
+2. 连续三个月流量使用率超过85%；
+3. 近6个月无欠费记录且无在办同类流量包业务。
+input.pl-9 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-64
+搜索策略
+搜索策略...
+select.text-xs border-slate-200 rounded-md bg-slate-50 p-1 outline-none
+最近30天
+目标用户数
+已保存客群名称
+图片 1
+连接线 1 Copy 2
+7g/.!7iGZ!h
+群组 5
+( ) fontsize-14
+对市场规模在2020年-2024年的5年内的趋势进行简要描述，主要说明原因；对成交额在2020年-2024年的5年内的趋势进行简要描述，主要说明原因；对新业态在2020年-2024年的5年内的趋势进行简要描述，主要说明原因。
+( )B color-rgba(51,51,51,1)
+antOutline-bar-chart
+市场规模
+供应链管理 1
+antOutline-bank
+竞争形势
+市场营销侧边菜单栏
+矩形 2 Copy 3
+矩形 2 Copy 4
+riFill-bar-chart-horizontal-fill
+近3年各区域成本支出比例图
+近3年成本支出每月趋势对比图
+( 6 fontsize-16
+年度成本支出
+( . fontsize-18
+对成本占比情况进行说明，以及比例数字背后的原因。
+￥6,122万
+( . fontsize-36
+riLine-pie-chart-line
+成本分析
+折线图 1 Copy 26
+线条 1 Copy 20
+折线图 1 Copy 25
+线条 1 Copy 19
+折线图 1 Copy 23
+折线图 1 Copy 22
+折线图 1 Copy 21
+矩形 1 Copy 45
+进度圆环 1
+( , fontfamily-HarmonyOS_Sans_TC
+￥992万
+( - color-rgba(142,142,142,1)
+￥815万
+￥611万
+￥565万
+￥726万
+￥1,060万
+( / color-rgba(142,142,142,1)
+￥1,353万
+( / color-rgba(51,51,51,1)
+折线图 1 Copy 20
+md-forward Copy 20
+md-forward Copy 19
+md-forward Copy 18
+md-forward Copy 17
+md-forward Copy 16
+md-forward Copy 15
+md-forward Copy 14
+md-forward Copy 13
+md-forward Copy 12
+10.9%
+13.0%
+md-forward Copy 10
+6.2%
+( + fontsize-28
+md-forward Copy 8
+16.5%
+md-forward Copy 6
+md-forward Copy 4
+25.8%
+( , fontsize-36
+成本D
+( + fontsize-16
+成本C
+成本B
+成本A
+视频广告
+渠道推广
+社交媒体
+if-share
+iconPark-market 1
+iconPark-oceanengine 1
+线条 1 Copy 21
+矩形 1 Copy 43
+md-forward Copy 21
+气泡图 1
+女性消费群体各年龄段分布
+男性消费群体各年龄段分布
+30-40岁
+( . color-rgba(142,142,142,1)
+mb-tri-arrow-up 1 Copy 2
++ 980
+对数字和增减情况进行简要说明，主要阐述比例情况以及转化数字增减的原因。
+fas fa-female
+进度圆环 1 Copy 4
+进度圆环 1 Copy 1
+- 664
+进度圆环 1 Copy 5
+mb-tri-arrow-up 1 Copy 1
++ 1,230
+( / lineheight-23px
+- 788
+- 2,140
++ 1,109
+对新增会员群体的占比情况进行说明，以及比例背后的原因。
+( C color-rgba(96,97,98,0.83)
+对潜在会员群体的占比情况进行说明，以及比例背后的原因。
+对优质会员群体的占比情况进行说明，以及比例背后的原因。
+潜在会员占比
+38.2%
+新增会员占比
+25.4%
+riLine-user-add-line
+riLine-user-follow-line
+3,122
+新增会员数
+8,377
+潜在会员数
+5,680
+优质会员占比
+76.5%
+优质会员数
+riLine-user-star-line
+圆形 2 Copy 16
+对女性消费群体的占比情况进行说明，以及比例背后的原因。
+圆形 2 Copy 15
+圆形 2 Copy 14
+40.8%
+fas fa-users
+圆形 2 Copy 13
+对男性消费群体的占比情况进行说明，以及比例背后的原因。
+圆形 2 Copy 12
+圆形 2 Copy 6
+35.6%
+4233人
+( - fontsize-12
+8902人
+10090人
+( . fontsize-12
+Level 3
+( / fontsize-16
+Level 2
+Level 1
+5286人
+17238人
+20988人
+12.1%
+39.6%
+48.2%
+18.2%
+38.3%
+43.4%
+相比2023年
+10.6%
+女性消费群体
+23,225 人
+( 0 color-rgba(255,98,0,1)
+男性消费群体
+43,513 人
+对女性消费群体的占比情况进行说明，以及比例背后的原因的简要分析和阐述。
+对男性消费群体的占比情况进行说明，以及比例背后的原因的简要分析和阐述。
+fas fa-male
+65.2%
+antOutline-man Copy 1
+antOutline-woman
+34.8%
+riFill-service-fill 1
+渠道转化数5年趋势
+( 1 fontweight-700
+渠道转化率5年趋势
+进度圆环 1 Copy 3
+- 2,446
+mb-tri-arrow-up 1 Copy 4
++ 21,586
+( 0 lineheight-23px
+对该渠道转化情况进行简要说明，主要阐述比例情况以及转化数字增减的原因。
+线下渠道转化
+社交渠道转化
+3.7%
+5.1%
+17.5%
+53.2%
+4.3%
+19.5%
+26.7%
+58%
+用户转化情况介绍，对2024年转化的特点进行简短的描述，说明原因。
+( I fontsize-12
+用户转化情况介绍，对转化的特点进行简短的描述，说明原因。
+- 5,140
++ 3,109
+电商渠道转化
+搜索渠道转化
+推荐
+付费
+留存
+激活
+获客
+mb-tri-arrow-up 1 Copy 3
+1.57W
+( - color-rgba(33,84,150,1)
+2.16W
+7.33W
+22.36W
+35.15W
+( . color-rgba(33,84,150,1)
+1.52W
+3.4W
+6.81W
+9.35W
+20.3W
+分享人数
+支付人数
+到店人数
+互动人数
+浏览人数
+Refer
+Revenue
+( / fontsize-20
+Retention
+( 1 fontsize-20
+Activation
+( 2 fontsize-20
+Acquisition
+( 3 fontsize-20
+产品4
+产品2
+产品3
+产品1
+52.3 %
+83.1 %
+31.8 %
+15.5%
+( + lineheight-23px
+antOutline-line-chart
+890
+老用户
+回客数
+iconPark-appointment
+女性
+占比
+( * lineheight-23px
+antOutline-pie-chart
+1562
+新客户
+客户数
+iconPark-add-user
+对2024年市场推广等营销手段的效果进行简要总结和描述，主要说明采取的措施、手段以及取得显著效果的原因；对明年市场推广的计划进行预测以及动作进行简要说明，以及预期产生的效果和达到的目的。
+( )/ fontsize-14
+12.8 %
+市场推广取得显著效果
+( 2 fontweight-400
+订单管理
+供应链管理侧边菜单栏
+运输管理
+仓储管理
+订单管理 1
+76家
+( * fontsize-28
+全部供应商
+( - lineheight-20px
+md-fiber_new 1
+3家
+( ) fontsize-28
+新进TOP10供应商
+( 2 lineheight-20px
+65.5%
+TOP10供应商占比
+对上下游延误升降的比例进行简短的描述，说明数字下降的原因。
+SCM
+供应链平台
+Supply Chain Management
+21.6%
+盘点错误率
+平台运转效率同比
+7g/.!7g/.!(
+7hsX!7g/.!h
+供应商分布情况
+65.3%
+72.1%
+覆盖率
+antOutline-percentage
+arcoDesign-arrow-rise Copy 5
+同期：491万
+627.4万
+销售费用
+iconPark-deposit
+arcoDesign-arrow-rise Copy 6
+32.4%
+20.6%
+增长率
+产品研发支出
+2,901.8 万
+矩形 1 Copy 46
+工厂生产支出
+矩形 1 Copy 47
+人员薪资支出
+管理成本支出
+和2023年数据项比较
+( 3 fontweight-400
+21.7 %
+2024年 占比
+新增数据
+52.3%
+2,143 万
+( / color-rgba(255,255,255,1)
+2024年销售额
+核心客户占比
+md-photo_filter
+78.3 %
+存量数据
+36.8%
+6,976 万
+iconPark-shopping-mall
+35.2%
+24.5%
+40.3%
+费用有所上升
+对利润特点进行简短的描述，说明原因和措施
+( < fontsize-12
+2024年费用
+( / fontsize-14
+760 万
+46.2%
+33.7%
+20.1%
+利润率有所下降
+( / lineheight-20px
+2024年利润额
+1,098 万
+华东区域
+总体营收
+( < color-rgba(96,97,98,0.83)
+1,013 万
+员工职级人数分布
+( 0 fontsize-18
+业务拓展区域分布
+中国地图
+riLine-shut-down-line 1 Copy 1
+统计地图 1
+矩形 1 Copy 4
+( ) fontsize-16
+>1000
+图例
+( * fontsize-16
+15%
+( + fontsize-12
+22%
+30%
+13%
+11%
+9%
+( * fontsize-12
+>800
+>500
+>200
+>100
+>0
+( * fontsize-14
+三角形 1
+1394
+广东省
+( + fontsize-14
+矩形 1 Copy 12
+矩形 1 Copy 14
+1208
+浙江省
+1130
+北京市
+903
+上海市
+823
+湖南省
+767
+福建省
+512
+湖北省
+304
+天津市
+229
+四川省
+216
+重庆市
+矩形 1 Copy 21
+广州
+矩形 1 Copy 22
+杭州
+南京
+重庆
+成都
+武汉
+深圳
+厦门
+西安
+长沙
+554
+509
+473
+423
+375
+320
+297
+251
+209
+186
+一周业务量趋势
+折线图 1
+类型1
+类型2
+类型3
+地区业务量排名
+一年业务量趋势
+日期时间选择3 1
+2024年7月5日  12:25:46  星期五
+( @ fontsize-20
+折线图 1 Copy 1
+世界地图
+城市10
+城市9
+城市8
+城市7
+( + lineheight-20px
+城市6
+城市5
+城市4
+城市3
+城市2
+城市1
+日本
+英国
+韩国
+澳大利亚
+加拿大
+印度
+德国
+法国
+美国
+中国
+省份地图
+区县10
+区县9
+区县8
+区县7
+区县6
+区县5
+区县4
+区县3
+区县2
+区县1
+南通市
+连云港市
+徐州市
+盐城市
+扬州市
+镇江市
+常州市
+无锡市
+南京市
+苏州市
+>50
+>300
+35%
+10%
+行业知识关联图谱
+4602次
+( - fontsize-18
+领域 A
+( , lineheight-28px
+业务阶段1
+1032次
+业务阶段2
+2780次
+业务阶段3
+790次
+群组 2
+矩形 3 Copy 1
+领域知识阶段分布
+( 0 fontsize-16
+领域A 热词频次
+( 0 lineheight-28px
+( - fontweight-300
+三角形 1 Copy 1
+219次
+阶段知识
+316次
+125次
+372次
+812次
+1055次
+643次
+665次
+矩形 1 Copy 34
+287次
+544次
+桑基图 1
+线条 2 Copy 2
+线条 2 Copy 1
+线条 2
+线条 2 Copy 5
+线条 2 Copy 6
+线条 2 Copy 7
+线条 2 Copy 8
+线条 2 Copy 9
+线条 2 Copy 10
+线条 2 Copy 11
+线条 2 Copy 12
+线条 2 Copy 13
+线条 2 Copy 14
+线条 2 Copy 15
+线条 2 Copy 16
+群组 7
+圆形 1 Copy 6
+行业
+知识
+圆形 1 Copy 9
+群组 3
+圆形 1 Copy 10
+圆形 1 Copy 11
+圆形 1 Copy 12
+圆形 1 Copy 13
+圆形 1 Copy 14
+( * lineheight-18px
+圆形 1 Copy 15
+圆形 1 Copy 16
+圆形 1 Copy 17
+圆形 1 Copy 18
+圆形 1 Copy 19
+圆形 1 Copy 20
+群组 4
+圆形 1 Copy 21
+圆形 1 Copy 22
+圆形 1 Copy 23
+圆形 1 Copy 24
+圆形 1 Copy 25
+圆形 1 Copy 26
+圆形 1 Copy 27
+圆形 1 Copy 28
+领域B 热词频次
+三角形 1 Copy 2
+矩形 1 Copy 48
+矩形 1 Copy 49
+3694次
+领域 B
+群组 2 Copy 1
+客户画像数据分析
+39.2%
+23.3%
+16.6%
+地区客户数排名
+fa5-male-fas 1
+fa5-female-fas 1
+if-users 1
+if-users-social 1
+fa5-male-fas 1 Copy 1
+fa5-male-fas 1 Copy 2
+fa5-male-fas 1 Copy 3
+fa5-male-fas 1 Copy 4
+fa5-male-fas 1 Copy 5
+fa5-male-fas 1 Copy 6
+fa5-male-fas 1 Copy 7
+fa5-male-fas 1 Copy 8
+fa5-male-fas 1 Copy 9
+fa5-male-fas 1 Copy 10
+fa5-male-fas 1 Copy 11
+fa5-female-fas 1 Copy 1
+fa5-female-fas 1 Copy 2
+fa5-female-fas 1 Copy 3
+fa5-female-fas 1 Copy 4
+fa5-female-fas 1 Copy 5
+fa5-male-fas 1 Copy 12
+fa5-female-fas 1 Copy 6
+fa5-male-fas 1 Copy 13
+fa5-male-fas 1 Copy 14
+fa5-male-fas 1 Copy 15
+fa5-male-fas 1 Copy 16
+fa5-male-fas 1 Copy 17
+fa5-male-fas 1 Copy 18
+fa5-male-fas 1 Copy 19
+fa5-male-fas 1 Copy 20
+fa5-male-fas 1 Copy 21
+fa5-male-fas 1 Copy 22
+fa5-male-fas 1 Copy 23
+fa5-female-fas 1 Copy 7
+fa5-female-fas 1 Copy 8
+fa5-female-fas 1 Copy 9
+fa5-female-fas 1 Copy 10
+fa5-male-fas 1 Copy 24
+fa5-female-fas 1 Copy 12
+fa5-male-fas 1 Copy 25
+fa5-male-fas 1 Copy 26
+fa5-male-fas 1 Copy 27
+fa5-male-fas 1 Copy 28
+fa5-male-fas 1 Copy 29
+fa5-male-fas 1 Copy 30
+fa5-male-fas 1 Copy 31
+fa5-male-fas 1 Copy 32
+fa5-male-fas 1 Copy 33
+fa5-male-fas 1 Copy 34
+fa5-female-fas 1 Copy 13
+fa5-male-fas 1 Copy 36
+fa5-female-fas 1 Copy 18
+fa5-male-fas 1 Copy 37
+fa5-male-fas 1 Copy 38
+fa5-male-fas 1 Copy 39
+fa5-male-fas 1 Copy 40
+fa5-male-fas 1 Copy 41
+fa5-male-fas 1 Copy 42
+fa5-male-fas 1 Copy 43
+fa5-male-fas 1 Copy 44
+fa5-male-fas 1 Copy 45
+fa5-male-fas 1 Copy 46
+fa5-female-fas 1 Copy 19
+fa5-male-fas 1 Copy 48
+fa5-female-fas 1 Copy 24
+fa5-male-fas 1 Copy 49
+fa5-male-fas 1 Copy 50
+fa5-male-fas 1 Copy 51
+fa5-male-fas 1 Copy 52
+fa5-male-fas 1 Copy 53
+fa5-male-fas 1 Copy 54
+fa5-male-fas 1 Copy 55
+fa5-male-fas 1 Copy 56
+fa5-female-fas 1 Copy 14
+客户行为统计
+if-users 1 Copy 1
+if-users 1 Copy 2
+if-users 1 Copy 3
+if-users 1 Copy 4
+矩形 3 Copy 2
+客户类型统计
+12,342,460人
+( 3 fontsize-18
+矩形 3 Copy 3
+客户类型1
+( - color-rgba(249,249,249,1)
+5,572,244人
+58.3%
+客户类型2
+群组 2 Copy 2
+19.8%
+客户类型3
+群组 2 Copy 3
+10.5%
+客户类型4
+圆形 2 Copy 3
+客户属性分布
+( . fontweight-300
+客户偏好分布
+玉玦图 1
+客户属性1
+32.6%
+客户属性2
+25.3%
+客户属性3
+客户属性4
+16.1%
+10.2%
+未知属性
+标签1
+标签2
+标签3
+标签4
+标签5
+标签6
+标签7
+标签8
+标签9
+玉玦图 1 Copy 1
+客户偏好1
+客户偏好2
+客户偏好3
+客户偏好4
+未知偏好
+if-ui-user 1
+if-ui-user 1 Copy 1
+if-ui-user 1 Copy 2
+if-ui-user 1 Copy 3
+if-ui-user 1 Copy 4
+if-ui-user 1 Copy 5
+if-ui-user 1 Copy 6
+if-ui-user 1 Copy 7
+if-ui-user 1 Copy 8
+if-ui-user 1 Copy 9
+行为相关性统计
+面积图 1
+客户时间统计
+矩形 5 Copy 2
+( ( 7g/.7g/.7g/.7g/.7gq87fJ{
+矩形 5 Copy 3
+矩形 5 Copy 4
+( ( 7g/.7g/.7g/.7g/.7gMv7fjX
+矩形 5 Copy 5
+矩形 5 Copy 6
+矩形 5 Copy 7
+矩形 5 Copy 8
+矩形 5 Copy 9
+( ( 7g/.7g/.7g/.7g/.7gU_7fcb
+矩形 5 Copy 10
+( ( 7g/.7g/.7g/.7g/.7gFX7fq1
+矩形 5 Copy 11
+( ( 7g/.7g/.7g/.7g/.7g^r7f[D
+矩形 5 Copy 12
+矩形 5 Copy 13
+( ( 7g/.7g/.7g/.7g/.7gJ07fm{
+矩形 5 Copy 14
+( ( 7g/.7g/.7g/.7g/.7gI87fnk
+行为
+( * lineheight-17px
+类型分布
+( , lineheight-34px
+对数字和增减情况进行简要说明
+( 6 fontsize-12
+人力资源侧边菜单栏
+财务数据侧边菜单栏
+iconPark-payment-method Copy 1
+运营成本
+iconPark-payment-method Copy 2
+iconPark-payment-method Copy 3
+该描述有什么显著的特点以及描述
+( 7 fontweight-400
+18.1%
+if-industries-4
+22.3%
+if-help-robot
+行业发展期1：该发展期具备的特征
+行业发展期2：该期延展到几月份，以及该发展期具备的特征
+( C fontweight-400
+行业发展期3：该期延展到几月份，以及该发展期具备的特征
+行业发展期4：该期延展到几月份，以及该发展期具备的特征以及呈现出来什么样的现象
+( O fontweight-400
+第四阶段
+第三阶段
+第二阶段
+第一阶段
+12月
+11月
+10月
+9月
+8月
+7月
+6月
+5月
+4月
+3月
+2月
+1月
+if-globe-alt
+antOutline-team
+antOutline-tags
+antOutline-shopping
+（按公开销售额数据）
+( 2 color-rgba(242,242,242,1)
+antOutline-ordered-list
+16 名
+行业排名
+圆形 2 Copy 10
+iconPark-city-one
+560+
+企业数量
+3.6 %
+市场占有率
+圆形 2 Copy 11
+圆形 2 Copy 9
+对2024年目前消费群体的特点1进行简要描述，主要说明原因和趋势；
+消费群体
+对2024年目前核心产品的特点进行简要描述，主要说明原因和趋势；
+( H fontsize-12
+产品特点
+对2024年目前行业发展的特点进行简要描述，主要说明原因和趋势；
+行业发展
+对2024年目前市场形势的特点进行简要描述，主要说明原因和趋势；
+市场形势
+市场占有率 TOP10（2024年12月）
+圆形 2 Copy 8
+圆形 2 Copy 7
+对2024年目前行业中相关企业的构成特点3进行简要描述，主要说明原因和趋势；
+( N fontsize-12
+对2024年目前行业中相关企业的构成特点2进行简要描述，主要说明原因和趋势；
+对2024年目前行业中相关企业的构成特点1进行简要描述，主要说明原因和趋势；
+企业构成
+市场增量
+圆形 2 Copy 5
+圆形 2 Copy 4
+对2024年目前市场规模的特点3进行简要描述，主要说明原因和趋势；
+对2024年目前市场规模的特点2进行简要描述，主要说明原因和趋势；
+对2024年目前市场规模的特点1进行简要描述，主要说明原因和趋势；
+同比上年收入提升12.8%，以上为预估数值
+( = fontsize-18
+用户分析
+销售指标侧边菜单栏
+当年季度均利润
+785.1 万
+问题3：对问题进行简短的描述，说明还存在的不足的地方
+( B fontsize-12
+问题2：对问题进行简短的描述，说明还存在的不足的地方
+问题1：对问题进行简短的描述，说明还存在的不足的地方
+【运营成本偏高，超预算12.5%】
+( 9 fontsize-18
+特点3：对特点进行简短的描述，说明销售数字增长的特点
+特点2：对特点进行简短的描述，说明销售数字增长的特点
+特点1：对特点进行简短的描述，说明销售数字增长的特点
+【收入大幅增长，超过既定目标】
+( 7 color-rgba(33,84,150,1)
+利润总额
+iconPark-financing-one
+3,145 万
+费用总额
+iconPark-funds
+主营成本
+iconPark-expenses-one
+11,723 万
+主营收入
+iconPark-income
+19,460 万
+iconPark-personal-collection
+iconPark-currency
+iconPark-emotion-happy
+iconPark-holding-hands
+iconPark-expenses 1
+该销售阶段的工作内容及进行简要描述，并说明当前在该阶段遇到的问题及下一步要实时的解决方案和预期效果
+( Y color-rgba(255,255,255,1)
+对该销售阶段的工作内容及进行简要描述，并说明当前在该阶段遇到的问题及下一步要实时的解决方案和预期效果
+( Z color-rgba(255,255,255,1)
+riFill-bar-chart-fill 1 Copy 4
+89.4%
+riFill-bar-chart-fill 1 Copy 3
+91.3%
+riFill-bar-chart-fill 1 Copy 2
+81.6%
+riFill-bar-chart-fill 1 Copy 1
+riFill-bar-chart-fill 1
+95.2%
+阶段
+销售
+意向
+客户
+商机
+收集
+复选 1 Copy 7
+组织架构调整和内部管理
+( 3 fontsize-14
+复选 1 Copy 6
+复选 1 Copy 5
+复选 1 Copy 4
+复选 1 Copy 3
+复选 1 Copy 2
+ze-arrow 1 Copy 1
+查看详细分解
+比上年度增长34%，扩展区域和产品线覆盖范围
+( > fontweight-400
+已完成
+95分
+( + lineheight-25px
+员工发展
+水波图 1 Copy 1
+29,000万
+( / lineheight-25px
+成本控制
+98%
+50+
+渠道拓展
+ze-arrow 1
+43,500万
+销售额
+水波图 1
+复选 1 Copy 1
+复选 1
+78.5%
+95.5%
+84.7%
+93.2%
+年度目标：提高企业各业务板块的综合盈利能力，稳中求进，营收在行业排名为前10
+( N fontweight-400
+第四季度 完成情况
+( 1 fontweight-400
+第三季度 完成情况
+第二季度 完成情况
+第一季度 完成情况
+时间维度
+第一季度
+01
+对本季度销售目标和利润目标完成情况的简要说明，主要是特点和问题。
+( H fontweight-400
+8,530 万
+7,690 万
+销售目标
+实际完成
+1,160 万
+877 万
+利润目标
+月利润
+月销售
+第二季度
+02
+9,188 万
+6,155 万
+1,267 万
+912 万
+第三季度
+03
+10,445 万
+9,250 万
+1,640 万
+第四季度
+04
+9,480 万
+11,448 万
+1,550 万
+2,066 万
+群组 1 Copy 1
+群组 5 Copy 1
+群组 1 Copy 2
+群组 5 Copy 2
+群组 1 Copy 3
+群组 5 Copy 3
+ze-refund-o
+销售成本
+2,976 万
+310.5 万
+季度均值（2024年）
+近3年销售成本和费用每月金额对比图
+( 9 fontweight-400
+近3年销售额每月趋势对比图
+近3年利润额每月趋势对比图
+fa5-chart-line-fas 1 Copy 1
+成本和费用构成比例图（2024年）
+( 9 fontsize-16
+fas fa-chart-pie
+成本
+费用
+特点1：对特点进行简短的描述，说明成本和费用分布的特点
+( C fontsize-12
+特点2：对特点进行简短的描述，说明成本和费用分布的特点
+特点3：对特点进行简短的描述，说明成本和费用分布的特点
+地理维度（全国）
+国内市场销售
+72%
+海外市场销售
+( . lineheight-28px
+( ) lineheight-23px
+riFill-community-fill Copy 4
+其他区域销售额705万
+9.5%
+( , color-rgba(255,98,0,1)
+利润 219万
+对特点进行简短的描述，说明成本和费用分布的特点
+( ? fontsize-12
+riFill-community-fill Copy 3
+华中区销售额980万
+( 2 fontsize-16
+12.6%
+利润 245万
+riFill-community-fill Copy 2
+华北区销售额1790万
+17.2%
+利润 336万
+riFill-community-fill Copy 1
+华南区销售额2580万
+28.6%
+利润 403万
+riFill-community-fill
+华东区销售额3032万
+利润 518万
+地区销售量分析
+地区销售量转化同比增长76%，对增长的特点进行简短的描述，说明增长的原因。
+( M fontsize-12
+地区增长率分析
+地区增长率同比提升43%，对增长的特点进行简短的描述，说明增长的原因。
+一线城市
+二线城市
+三线城市
++ 10,788
+四线城市
+- 1,217
+城市数
+各区域每月销售额对比图（2024年）
+地理维度（省份）
+地理维度（海外）
+28%
+if-earth 1
+antFill-dollar-circle
+亚洲及澳洲 3032万
+34.6%
+群组 4 Copy 1
+19.1%
+欧洲 2190万
+群组 4 Copy 2
+32.5%
+美洲 2816万
+群组 4 Copy 3
+13.8%
+非洲 1266万
+海外市场销售同比
+地区销售量转化同比增长51%，对增长的特点进行简短的描述，说明增长的原因。
+地区增长率同比提升25%，对增长的特点进行简短的描述，说明增长的原因。
+渠道维度
+2024年渠道销售额
+该数字和2023年的数据比较有什么显著的特点以及描述
+( B fontweight-400
+渠道转化率
+会员转化率
+搜索渠道
+利润额
+电商渠道
+社交渠道
+线下渠道
+平台1
+平台3
+平台2
+平台4
+平台5
+平台6
+168 万
+线下门店经营情况对比图（2024年）
+( : fontsize-16
+直营特点
+加盟门店
+加盟特点
+506 家
+门店数
+105 万
+比上年增加
+( - lineheight-29px
+98 万
+122 家
+线上渠道销售情况分析（2024年）
+对特点进行简短的描述，说明成本和费用分布的特点。对特点进行简短的描述，说明成本和费用分布的特点。对特点进行简短的描述，说明成本和费用分布的特点。
+( q fontsize-12
+( 9 fontsize-14
+对特点进行简短的描述，说明成本和费用分布的特点。对特点进行简短的描述，说明成本和费用分布的特点。
+( X fontsize-12
+进行简短的描述
+提升 13%
+提升 25%
+提升 37%
+渠道一
+渠道二
+渠道三
+渠道四
+产品维度
+近3年销售额趋势对比图
+( 3 fontweight-700
+对完成情况进行简短的描述，说明原因和措施
+iconPark-plan 1
+antOutline-layout
+iconPark-slide
+2,206 万
+( - fontsize-36
++10.1 %
+20.5%
+37.4%
+23.6%
+18.5%
+圆形 1 Copy 7
+83.4%
+452 万
+377 万
+md-forward Copy 5
+375 万
+306 万
+72.2%
+569 万
+411 万
+62.7%
+md-forward Copy 7
+610 万
+383 万
+633 万
+( + fontsize-36
+-35.2 %
+对2024年利润率的特点进行简短的描述，说明产生这些数字背后的原因
+比去年相比
+2024年利润率
+( 0 fontsize-12
+对下降的特点1进行描述
+( 3 fontsize-12
+对下降的特点2进行描述
+对下降的特点3进行描述
+28.7%
+- 5.3%
+矩形 1 Copy 50
+矩形 1 Copy 51
+对2024年费用率的特点进行简短的描述，说明产生这些数字背后的原因
+2024年费用率
+对上升的特点1进行描述
+对上升的特点2进行描述
+对上升的特点3进行描述
+18.6%
++ 10.9%
+近3年各产品利润率趋势图
+( 4 fontweight-700
+近3年各产品费用率趋势图
+fas fa-chart-bar Copy 1
+矩形 1 Copy 52
+产品1销售额332万
+产品2销售额252万
+44.1%
+产品1销售额401万
+39.5%
+产品3销售额219万
+产品1销售额227万
+各产品区域销售占比
+对区域销售特点进行描述
+md-vertical_align_top 1
+连接线 2 Copy 1
+连接线 2 Copy 2
+7iS:!7g/.!(
+连接线 2 Copy 3
+7g/.!7j*X!(
+组成3
+riLine-shut-down-line 1
+主菜单1
+图片 4
+图片 3
+主菜单2
+主菜单3
+主菜单4
+主菜单5
+主菜单6
+状态 2
+状态 3
+状态 4
+状态 5
+状态 6
+13,365
+il5icevhUKTWJqMRSoEKUP
+文本 qxODTxH
+7516,5
+7516,6
+( . color-rgb(255,255,255)
+7616,7
+7616,8
+4 Copy
+il5icevhUKTWNktXgmIIZ
+文本 VH4jJf1
+1234567890
+( 2 color-rgb(255,255,255)
+状态 7
+状态 8
+状态 9
+状态 10
+文本 2Pvmn7v
+文本 Zp7SJuA
+状态 11
+il5icevhUKTWNktEqULK6p
+文本 1cBNfxZ
+状态 12
+il5icevhUKTWfXOxZmePsl
+群组 24
+矩形
+矩形 vJ1QqF5
+柱子
+柱子 sfNLucs
+图片 laI3fsJ
+圆形 daiqWDl
+图片 SIAKAgt
+图片 tlYfY1X
+图片 dKsJWkN
+图片 K5OYD0N
+圆形 pihN1nT
+圆形 oBMaZP9
+圆形 qM8DxBA
+圆形 RJqX2ml
+群组 34
+A 4l9pg9h
+矩形 V3HsFbM
+矩形 T2QP67x
+矩形 uFFQNUh
+矩形 qFVsmVI
+矩形 gvy32Tj
+矩形 DFHTkFw
+B ffhQMFw
+矩形 K8fFh0M
+矩形 XaocKnO
+矩形 2gJh1R3
+矩形 78qRRXy
+矩形 cgKFjnm
+矩形 NH3uYWK
+矩形 Copy 2 zDWBLv4
+文本 ktwX4RF
+2021/12/12 14:55:14 — 2021/12/23 20:54:20
+( Q fontsize-14
+riLine-calendar-line
+矩形 3 Copy DaoxZoQ
+确定
+圆形 2 Copy 2 wXKU2Cu
+文本 ZNwX9Ko
+( ) color-rgb(0,82,217)
+文本 F9CjfRA
+文本 GOkO23e
+矩形 2 Copy 4 n1dXYq8
+群组 KIe1nph
+文本 w84krCb
+文本 zM5U9WK
+文本 D1Qzgud
+文本 J1xSPQB
+矩形 2 Copy 9 VKKqKJL
+文本 5CFE6Ut
+26
+( * color-rgb(0,82,217)
+文本 ugdtBaj
+文本 Syily0L
+30
+文本 4IQqUik
+29
+文本 wbfNBF8
+2021年
+( - fontsize-16
+文本 3ca5C4g
+28
+表格 Copy 2 RC59AjY
+text-align: center;color: rgba(151, 151, 151, 0.9);font-weight: bold;
+text-align: center;color: rgba(0, 0, 0, 0.26);
+text-align: center;color: rgba(0, 0, 0, 0.9);
+文本 VyTmrpO
+27
+矩形 2 Copy 3 hzHHj5M
+文本 1atsEyy
+19
+文本 CTMQfEB
+25
+文本 s7g32F
+24
+文本 ihkeJN0
+23
+文本 SbfoI2L
+文本 BRmBRTF
+21
+文本 iAz1hp0
+20
+矩形 2 Copy 2 y8fIS0m
+文本 QCdefO4
+18
+文本 DXDGcV9
+17
+文本 UGUmsvE
+16
+文本 rDb6tsM
+文本 5dqsTBw
+14
+文本 bFZQ8R5
+13
+圆形 2 Copy Q5fP6aE
+矩形 2 Copy y8ZSdEx
+文本 HwJsWAK
+圆形 Copy WvIwyqG
+arcoDesign-left A3jnNa7
+圆形 SK7GOZJ
+arcoDesign-right X7VJ6Ov
+文本 4QCGm41
+线条 Copy UlnbuEo
+表格 Copy RsAcbsA
+矩形 Copy sVLoYHC
+il5icevhUKl86q33K7juVc
+il5icevhUKpDVyCAt8Ezwv
+il5icevhUKpE2KfjNBcPpJ
+il5icevhUKplOsrRUrWRcA
+il5icevhUKplOsrMJyKBV2
+il5icevhUKpmKS2i1mn3DK
+il5icevhUKpmKS2suZTPXf
+il5icevhUKqEbTitdzoAjf
+il5icevhUKqEbTi9lz0EZN
+il5icevhUKqEbTiq5lw83P
+il5icevhUKqEbTij0uyFsU
+if-bullhorn Copy
+if-bullhorn
+文本 dZ3e0NZ
+新的授权网络设备接入通知
+( 4 fontsize-16
+文本 yeRLFXg
+if-bullhorn Copy 3 1YUB9tA
+文本 cg5K2uI
+if-bullhorn Copy 4 pWX2P02
+文本 tCtTuLP
+if-bullhorn Copy 5 sbcJnem
+文本 zmO4TGp
+if-bullhorn Copy 6 WtoeUMM
+文本 Qygz8n1
+il5icevhULcrz72T5Ng5Mi
+rbpUJQgpHI4bV4lAo
+世界
+省份
+地市
+动态组件
+State1
+图片 BAR4ApM
+State2
+图片 AARKs9h
+整体情况
+地理维度
+全国
+乡镇
+行情调研
+订单管理i
+教育培训
+人员流动
+薪资福利
+资产负债
+现金流量
+企业利润
+rbpUTmYb2MgTAF0UA
+人力资源 Copy
+链接区域 1
+( )/ fontsize-16
+批注 1
+多行输入 2
+聊天气泡 1
+聊天气泡
+双击编辑文本
+组件
+文本
+滚动面板是一种承载长页面的容器，当你需要滚动显示内容时使用。右侧设置项可以调整滚动方式。
+数字步进器 1
+表格 1 Copy 1
+滚动面板 1
+表格--带边框线表格 1
+矩形 n9cslM4
+分页-带数据总量显示 Copy o2cPSKC
+矩形 Copy 2 iuvnhD1
+矩形 2 Copy 11 JEIt4kL
+矩形 2 Copy 12 45VnP6w
+矩形 2 Copy 13 ELKuuUM
+矩形 2 Copy 14 sI1Y57J
+矩形 2 Copy 15 vqjwMWa
+矩形 2 Copy 16 YPPXrGK
+arcoDesign-right Copy NrFKr8X
+arcoDesign-left Copy k51P5Ns
+矩形 2 Copy 17 lJmOmj7
+矩形 2 Copy 18 N7oDLMC
+矩形 2 Copy 19 BNzCfAj
+文本 ghty3DZ
+群组 6 Kud9mnV
+矩形 2 fxgcMat
+文本 crUmkwm
+项目名称
+( , color-rgba(0,0,0,0.4)
+图标 5r4qcQU
+矩形 2 P5TPjqa
+文本 2wGcPbz
+文件名.txt
+( / color-rgba(0,0,0,0.9)
+矩形 2 RNzGHmU
+文本 XuEceHd
+矩形 2 cUAiSwh
+文本 42zoLuz
+矩形 2 r94IJf2
+文本 ELzEi2Q
+群组 9 ODLOb83
+矩形 2 riJew3
+文本 UtGfNjz
+管理员
+( + color-rgba(0,0,0,0.4)
+图标 gjzsLUn
+矩形 2 aeIkQfM
+文本 Wr6CY65
+sisiwu，liliwang
+( 7 color-rgba(0,0,0,0.9)
+矩形 2 hTf7If5
+文本 qTnNGCc
+矩形 2 UgNo93J
+文本 ZggWImc
+矩形 2 5h05p6z
+文本 4rlUhbw
+群组 13 rMqnYWC
+群组 7 BvZ8Kdg
+矩形 2 p12pxKq
+群组 Copy Uv2Pifn
+文本 YN1byHQ
+群组 8 dErE8jG
+矩形 2 JaBT26P
+文本 rvAxQwT
+群组 10 W7A6Pxi
+矩形 2 jjhApph
+文本 I7uXr6P
+群组 11 HlgNI03
+矩形 2 JeWeQ1C
+文本 E0cn5fq
+群组 12 tFlJ579
+矩形 2 TDkPZt7
+文本 iJFGmFi
+图标 ECrtdXB
+群组 14 NVqPW5e
+群组 2 iWvnRRN
+矩形 2 wVN4QUi
+文本 jheBwAn
+( * color-rgba(0,0,0,0.4)
+群组 2 JYKI5E7
+矩形 2 OaUntZ0
+文本 ms5OPDR
+管理         删除
+( 5 color-rgba(0,82,217,1)
+群组 2 58tlQJO
+矩形 2 3JFrpUl
+文本 wlPBaIB
+群组 2 Qqrf54X
+矩形 2 CKaq5yW
+文本 iHMn46z
+群组 2 J8tTWxc
+矩形 2 jdVXyok
+文本 vJQTEh6
+表格-基础表格 1
+矩形 vjbXdh8
+群组 5 pSZ8icF
+群组 4 HcfccQi
+群组 3 WdgW8YJ
+群组 a2WxHEA
+矩形 2 H4YSmTP
+文本 dWx7DKJ
+图标 wvTtjms
+群组 Copy g06Fx9C
+矩形 2 rC9Vm8U
+文本 68W2N1x
+图标 FzHtlQf
+群组 2 iE46Ae4
+矩形 2 uxy6NvQ
+文本 TcUK6EX
+线条 EbbjXex
+群组 3 Copy Bk9pN97
+群组 4X2xTbG
+矩形 2 AmWXwCa
+文本 J5Eef1z
+群组 Copy 9yRMmiB
+矩形 2 B7XEWjy
+文本 sHISnbO
+群组 2 wtMnfWp
+矩形 2 yILpzax
+文本 h6YtvEf
+线条 Ea7uwHB
+群组 3 Copy 2 HqJdO6W
+群组 KY1lcnm
+矩形 2 Bf0DPBP
+文本 pOh2gXq
+群组 Copy kgNWJul
+矩形 2 dRnDMgS
+文本 6o7RjTO
+群组 2 lFRfJtp
+矩形 2 stbBm5M
+文本 MzjFZB5
+线条 SDT8Enb
+群组 3 Copy 3 L06xiYj
+群组 LXW55e2
+矩形 2 tqVPBuB
+文本 cCZeGOL
+群组 Copy 2I4GaOp
+矩形 2 Ql1sDiH
+文本 vAB3rwc
+群组 2 KghvyGM
+矩形 2 JFR7LWt
+文本 3Gra6Da
+线条 SJ2GJZu
+群组 3 Copy 4 p4oC9QZ
+群组 slIGad4
+矩形 2 R9GXjoJ
+文本 hWb8tfA
+群组 Copy eH1Ly1e
+矩形 2 9k40hch
+文本 tsDRFY0
+群组 2 3Jzvtin
+矩形 2 13LP1bz
+文本 cy7SQLp
+线条 j4rW0P3
+分页-带数据总量显示 Copy WqyyhzW
+矩形 Copy 2 LGrsHGN
+矩形 2 Copy 11 SedKluO
+矩形 2 Copy 12 Y8sM9GQ
+矩形 2 Copy 13 Pr6dQA3
+矩形 2 Copy 14 qP1CI2z
+矩形 2 Copy 15 J12v4iC
+矩形 2 Copy 16 zuu6ivi
+arcoDesign-right Copy XSjyPCz
+arcoDesign-left Copy DoXLETI
+矩形 2 Copy 17 DYKKpzq
+矩形 2 Copy 18 GkNxkU9
+矩形 2 Copy 19 lo7DtP2
+文本 sURj49R
+表格--斑马线表格 1
+矩形 U6aYSRM
+群组 3 cunHzFK
+群组 vNfqWG2
+矩形 2 12LnVn6
+文本 Jq9EAXd
+图标 v3ZI2Ok
+群组 Copy R1OH3v8
+矩形 2 z5Pw2pj
+文本 v0jfx6N
+图标 zw5k3pG
+群组 2 EKZ0NlH
+矩形 2 pFdabdw
+文本 mx6TZBk
+线条 qDiIjM3
+群组 3 Copy iIqpn5D
+群组 glJR5tp
+矩形 2 MwykLiF
+文本 hEVYka6
+群组 Copy aDNENAg
+矩形 2 Q89Ursr
+文本 GhyLOfq
+群组 2 ihhJ0VC
+矩形 2 5eqeJxS
+文本 pPLlsbt
+线条 xG7XtUW
+群组 3 Copy 2 qL9LeME
+群组 slPSxwI
+矩形 2 Zq3skMQ
+文本 H9tVHN5
+群组 Copy koUQR4F
+矩形 2 e1Lnurb
+文本 Oue9IpX
+群组 2 1FOuCk7
+矩形 2 WlPH8Om
+文本 EEAUKag
+线条 dCl0YEe
+群组 3 Copy 3 Aas0S2R
+群组 HLfSJn2
+矩形 2 Fop8NWI
+文本 T8jwWlj
+群组 Copy WXO7yih
+矩形 2 4esdKMl
+文本 1KJvwtW
+群组 2 YEfK59f
+矩形 2 tR3Y9NS
+文本 LKOmEC6
+线条 4VTGahq
+群组 3 Copy 4 nem0YGx
+群组 sY3ZnfN
+矩形 2 WVG9lE0
+文本 tOxd3Lx
+群组 Copy jmYrJ9x
+矩形 2 XaryQNj
+文本 2o7v07F
+群组 2 p4qIJtU
+矩形 2 xivnZvY
+文本 HRnNLE7
+线条 REv7GiU
+分页-带数据总量显示 Copy w2X0MwX
+矩形 Copy 2 zIrYAQn
+矩形 2 Copy 11 NP9hkSe
+矩形 2 Copy 12 Imers4L
+矩形 2 Copy 13 TWR2qdV
+矩形 2 Copy 14 qqCDGhb
+矩形 2 Copy 15 RlRgJUs
+矩形 2 Copy 16 vNeqbr4
+arcoDesign-right Copy iKOSFBV
+arcoDesign-left Copy 3TIEDZh
+矩形 2 Copy 17 iQBawAp
+矩形 2 Copy 18 wPMHdYB
+矩形 2 Copy 19 awlK3MT
+文本 rNvzlxO
+表格-无内纵线表格 1
+分页-带数据总量显示 Copy NBIhnI3
+表格-固定尾部
+表格--带边框线表格 Copy SWjLMv
+矩形 PV8njVm
+群组 6 KvgIBQV
+矩形 2 l577q9S
+文本 zsvSbed
+图标 HokhDmP
+矩形 2 fgkefPY
+文本 O3MOGGg
+矩形 2 P4WkbXt
+文本 ZRolLap
+矩形 2 j8P9oOZ
+文本 SYjsSbM
+矩形 2 pYRAwjd
+文本 xLhWgG
+群组 9 bFv1DUy
+矩形 2 6Fy2aIC
+文本 GOFdxVs
+图标 xCW3qmz
+矩形 2 nyxneXB
+文本 yzcBd66
+矩形 2 a4dHHJC
+文本 EHcv0kH
+矩形 2 en21MBQ
+文本 DZxJtdw
+矩形 2 X9WEYNj
+文本 Q5elk3u
+群组 13 evvXhhk
+群组 7 GlbCwNl
+矩形 2 l2ORnum
+群组 Copy gieJ9By
+文本 Aiqdznk
+群组 8 9sSj72T
+矩形 2 b6f6AR2
+文本 rFGhorb
+群组 10 3cHRJMw
+矩形 2 bamYeTW
+文本 kWzG3nj
+群组 11 bkxfCQL
+矩形 2 8R907F
+文本 vcVr9TA
+群组 12 HbdTDPR
+矩形 2 YzkVVxC
+文本 B3G5cwi
+图标 hZqlILL
+群组 14 v6k2GgF
+群组 2 8wiorBa
+矩形 2 9NqXINX
+文本 asCvLfN
+群组 2 VNDfJE9
+矩形 2 q76Nft
+文本 IBS5S1Z
+群组 2 PXn208k
+矩形 2 k0novtd
+文本 tKhfTZC
+群组 2 jMFUP5k
+矩形 2 lNiqQVF
+文本 rl9t9gr
+群组 2 iFBEB0F
+矩形 2 qdtUfNR
+文本 eQzaY5O
+线条 2 Copy j0UWBu1
+表格-无内横线表格 1
+标记/小红点1 Copy 3
+主题 1
+脑图 1
+连接线
+7gj:!7gj:!(
+7gj:!7g/.!(
+按钮 2
+BUTTON
+( . color-#ffffff
+7g/.!7g`w!(
+群组 Copy 4
+按钮
+Button: BG
+群组 Copy 3
+用户量
+粘性	价值	竞抢	感知	活跃	传播
+( 9 fontsize-20
+100	140	230	100	130	148
+( ? fontsize-20
+150	100	200	140	100	140
+194	120	132	165	220	152
+191	178	109	220	103	178
+7k6<!GN63!(
+7i;{!7g/.!(
+7i=2!7gFD!(
+ALL
+( + fontweight-700
+NEW
+TOP
+表格 1 Copy 3
+分页器1 1
+高价值
+ref mind page 0
+中心主题
+主题 2
+主题 3
+企业经营数字看板 1
+下一步
+( + lineheight-17px
+群组 6 Copy 1
+    您可以进行产品搜索、新产品描述我将为您自动推荐可用产品，例如分析ARPU>89客客群
+G 7 color-rgba(79,79,79,0.99)
+你好！我是产品运营小助手
+main
+评估预测
+执行配置
+产品选择
+策略管理
+策略生成
+section
+( , color-rgba(37,99,235,1)
+多选
+矩形 XnNGerr
+文本 wj294Zu
+选择
+( * color-#1989fa
+图标 Jp075RF
+多选 Copy 1
+多选框-多选框组 2
+FRAME Copy 3
+图标 YQccNmy
+文本 3gTJ8Yk
+Action Text
+( 3 color-#000100
+多选 1 Copy 3
+合约期内
+旗舰机型
+4G终端
+5G终端
+80%+ (饱和)
+50%
+0%
+终端类型
+流量使用饱和度 (DOU/套餐量)
+月均ARPU值区间
+西文排版
+( , color-#5a5e66
+设计中的设计
+( . color-#5a5e66
+版式设计原理
+色彩设计的原理
+一字一生
+写给大家看的设计书
+( 1 color-#1989fa
+设计师的自我修养
+( 0 color-#5a5e66
+图标 Q9x2QPg
+家宽潜在用户
+低活跃度用户
+经常出差客群
+重度视频用户
+业务标签偏好 (多选)
+多选  1
+矩形 iirnEzN
+三角形 rqrVWp5
+矩形 2 KdSxLqf
+文本 MxKeHCE
+( 1 color-#5a5e66
+矩形 3 KrauZPe
+文本 dPxx84s
+图标 PG0naav
+图标 2 PtMvVbw
+更新圈选模型
+高价值存量客群 (Zone A)
+该客群ARPU提升潜力巨大，推荐使用“权益+流量”组合策略进行触达。
+80
+80.2%
+画像匹配度
+button Copy 7
+button Copy 5
+button Copy 8
+button Copy 9
+button Copy 3
+button Copy 6
+iconify-icon
+AI 正在优化方案中 Copy 1
+生成策略
+div Copy 4
+套餐升级场景
+button Copy 15
+填写目标客群数值
+button Copy 10
+select.w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-blue-500
+3-5年以上 (高价值潜力)
+已保存客群的名称
+群组 10
+communication_ops_assessment
+导出报表
+新建策略
+h3
+累计成功下发率 98.2%
+table
+tbody
++ 4
+“【定制化推荐】XX先生/女士，发现您近一个月晚间流量使用激增，现为您匹配深夜专属特惠包，0点-6点流量不封顶，仅需1元起。回复YY立即开启您的极致冲浪体验。”
+基于历史高 CTR 趋势推荐
+nav
+h1
+运营评估系统
+CommAnalytics
+策略总览
+趋势分析
+对比分析
+客群洞察
+话术优化
+执行效能
+当前日期
+2026年4月14日
+img
+iconPark-financing-one Copy 1
+iconPark-deposit Copy 1
+持有资产下降
+对持有资产下降特点进行简短的描述，说明原因和措施
+矩形 1 Copy 53
+销售费用上升
+对销售费用上升特点进行简短的描述，说明原因和措施
+运营成本上升
+对运营成本上升特点进行简短的描述，说明原因和措施
+其他区域
+东北区域
+华中区域
+华北区域
+华南区域
+1,354 万
+706 万
+1,138 万
+890 万
+983 万
+管理成本分摊
+生产运输支出
+1,891.2 万
+4,366.5 万
+14,680.3 万
+( 2 fontweight-700
+对2024年财务数据进行简要总结和描述，主要说明采取的措施、手段以及取得显著效果的原因；对明年的计划进行预测以及动作进行简要说明，以及预期产生的效果和达到的目的。
+( z fontsize-14
+2024年整体收入达到预期
+( 5 fontweight-400
+经营指标各项数据总体平稳
+24.8 %
+净利润率
+st-analysis
+65.2 %
+资产持有率
+iconPark-connect
+10.3 %
+3.85 亿
+st-collection
+各区域财务数据对比图
+经营核心指标分析总结
+同期：12,096万
+( 2 color-rgba(96,97,98,0.83)
+9,566.8万
+持有资产
+同期：2491万
+( 0 color-rgba(96,97,98,0.83)
+3,627.4万
+同期：4956万
+6,098.5万
+iconPark-payment-method
+通信运营评估页面
+导出报表 Copy 1
+新建策略 Copy 1

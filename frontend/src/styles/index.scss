@@ -1,0 +1,83 @@
+:root {
+  --tc-primary: #1e6ecf;
+  --tc-primary-2: #409eff;
+  --tc-ai: #4a90e2;
+  --tc-manual: #888888;
+  --tc-bg: #f4f6fa;
+  --tc-card: #ffffff;
+  --tc-text: #303133;
+  --tc-sub: #666666;
+  --tc-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--tc-bg);
+  color: var(--tc-text);
+  font-size: 14px;
+  min-width: 1200px;
+}
+
+.tc-card {
+  background: var(--tc-card);
+  border-radius: 8px;
+  box-shadow: var(--tc-shadow);
+  padding: 20px;
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.14);
+  }
+}
+
+.tc-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--tc-text);
+}
+
+.tc-sub-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tc-sub);
+  margin: 10px 0;
+}
+
+.tc-placeholder {
+  color: #909399;
+  font-size: 12px;
+}
+
+.up-arrow {
+  color: #67c23a;
+  font-weight: 700;
+}
+
+.down-arrow {
+  color: #f56c6c;
+  font-weight: 700;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease-out;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c0c4cc;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

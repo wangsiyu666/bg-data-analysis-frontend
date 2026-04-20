@@ -1,0 +1,545 @@
+<template>
+  <div class="segment-selector">
+    <div class="sec-head">
+      <div class="sec-ico">
+        <svg viewBox="0 0 18 18" width="16" height="16" fill="none">
+          <circle cx="6" cy="6" r="2.5" stroke="#1e6ecf" stroke-width="1.5"/>
+          <circle cx="13" cy="6" r="2.5" stroke="#1e6ecf" stroke-width="1.5"/>
+          <circle cx="6" cy="13" r="2.5" stroke="#1e6ecf" stroke-width="1.5"/>
+          <circle cx="13" cy="13" r="2.5" stroke="#1e6ecf" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="sec-title">多维客群精准圈选</div>
+      <div class="step-badge">{{ stepLabel }}</div>
+      <div class="total">
+        <span class="total-label">当前圈选目标客户规模</span>
+        <span class="total-value"><CountNumber :end="totalCount" /> <span class="unit">条</span></span>
+      </div>
+    </div>
+    <div class="sec-desc">多种方式圈选运营目标客群客户。</div>
+
+    <div class="methods-grid" :class="'cols-' + methodCount">
+      <!-- 口径方式 -->
+      <div class="method-card" :class="{ active: condition.confirmed }">
+        <div class="mc-head">
+          <div class="mc-icon c-blue">
+            <svg viewBox="0 0 18 18" width="14" height="14"><rect x="2" y="2" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="10" y="2" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="2" y="10" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="10" y="10" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div class="mc-title">口径（特征组合）方式</div>
+        </div>
+        <div class="mc-sub">请选择口径或选择客群库</div>
+        <el-select
+          v-model="condition.segmentName"
+          placeholder="口径圈选"
+          clearable
+          size="default"
+          style="width: 100%"
+        >
+          <el-option v-for="s in savedSegments" :key="s.id" :label="s.name" :value="s.name" />
+        </el-select>
+        <div class="mc-list" v-if="savedSegments.length">
+          <div v-for="s in savedSegments.slice(0, 5)" :key="s.id" class="mc-li">
+            <el-checkbox
+              :model-value="condition.segmentName === s.name"
+              @change="condition.segmentName = s.name"
+            >{{ s.name }}</el-checkbox>
+          </div>
+        </div>
+        <div class="mc-count">圈选用户数：<strong>{{ condition.count.toLocaleString() }}</strong> 人</div>
+        <div class="mc-actions">
+          <button class="btn-ghost" @click="cancelMethod('condition')">取消圈选</button>
+          <button class="btn-primary" :disabled="condition.loading" @click="runCondition">
+            {{ condition.loading ? '...' : '确定圈选' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- 种子扩散 -->
+      <div class="method-card" :class="{ active: seed.confirmed }">
+        <div class="mc-head">
+          <div class="mc-icon c-blue">
+            <svg viewBox="0 0 18 18" width="14" height="14"><path d="M9 2 L15 14 L3 14 Z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div class="mc-title">种子用户扩散方式</div>
+        </div>
+        <div class="mc-sub">目标客群量</div>
+        <el-input-number v-model="seed.target" :min="1000" :step="10000" style="width: 100%" size="default" controls-position="right" />
+        <div class="mc-box">
+          <textarea v-model="seed.seeds" rows="2" placeholder="请输入user_id、电话号、email等字符串；多值用分号分隔。" />
+          <button class="mc-inline-btn" :disabled="seed.compLoading" @click="runSeedCompute">
+            {{ seed.compLoading ? '计算中' : '开始计算' }}
+          </button>
+        </div>
+        <div class="mc-count">圈选用户数：<strong>{{ seed.count.toLocaleString() }}</strong> 人</div>
+        <div class="mc-actions">
+          <button class="btn-ghost" @click="cancelMethod('seed')">取消圈选</button>
+          <button class="btn-primary" @click="confirmMethod('seed')">确定圈选</button>
+        </div>
+      </div>
+
+      <!-- 产品推荐客群 -->
+      <div v-if="showProductRecommend" class="method-card" :class="{ active: productSeg.confirmed }">
+        <div class="mc-head">
+          <div class="mc-icon c-blue">
+            <svg viewBox="0 0 18 18" width="14" height="14"><path d="M9 3 L9 15 M3 9 L15 9" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div class="mc-title">产品推荐客群方式</div>
+        </div>
+        <div class="mc-sub">目标客群量</div>
+        <el-input-number v-model="productSeg.target" :min="1000" :step="10000" style="width: 100%" size="default" controls-position="right" />
+        <div class="mc-ring">
+          <svg viewBox="0 0 80 80" width="80" height="80">
+            <circle cx="40" cy="40" r="30" stroke="#d8e4f3" stroke-width="6" fill="none" />
+            <circle cx="40" cy="40" r="30" stroke="#1e6ecf" stroke-width="6" fill="none"
+              stroke-dasharray="110 200" stroke-linecap="round" transform="rotate(-90 40 40)" />
+            <circle cx="40" cy="10" r="3" fill="#1e6ecf" />
+          </svg>
+        </div>
+        <div class="mc-count">圈选用户数：<strong>{{ productSeg.count.toLocaleString() }}</strong> 人</div>
+        <div class="mc-actions">
+          <button class="btn-ghost" @click="cancelMethod('productSeg')">取消圈选</button>
+          <button class="btn-primary" :disabled="productSeg.loading" @click="runProductSeg">
+            {{ productSeg.loading ? '...' : '确定圈选' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- 用户清单 -->
+      <div class="method-card" :class="{ active: upload.confirmed }">
+        <div class="mc-head">
+          <div class="mc-icon c-blue">
+            <svg viewBox="0 0 18 18" width="14" height="14"><rect x="2" y="4" width="14" height="11" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M2 7h14M5 4v11M12 4v11" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="mc-title">用户清单方式</div>
+        </div>
+        <el-upload
+          drag
+          :auto-upload="false"
+          :on-change="handleFileChange"
+          :show-file-list="false"
+          class="up-drag"
+          accept=".csv,.xls,.xlsx"
+        >
+          <div class="upload-tip">
+            <div class="upload-cloud">
+              <svg viewBox="0 0 40 32" width="32" height="26"><path d="M30 12a8 8 0 00-15.3-3A6 6 0 005 14a6 6 0 006 6h19a6 6 0 000-12z" fill="none" stroke="#1e6ecf" stroke-width="1.5"/><path d="M20 14v10M16 18l4-4 4 4" fill="none" stroke="#1e6ecf" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="upload-text">点击或下载文件到此区，开始上传</div>
+          </div>
+        </el-upload>
+        <div class="mc-sub-small" v-if="upload.file">已选择: {{ upload.file.name }}</div>
+        <div class="mc-count">圈选用户数：<strong>{{ upload.count.toLocaleString() }}</strong> 人</div>
+        <div class="mc-actions">
+          <button class="btn-ghost" @click="cancelMethod('upload')">取消圈选</button>
+          <button class="btn-primary" :disabled="upload.loading || !upload.file" @click="runUpload">
+            {{ upload.loading ? '...' : '确定圈选' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { reactive, computed, watch, onMounted } from 'vue'
+import { ElMessage } from 'element-plus'
+import CountNumber from '@/components/CountNumber.vue'
+import { segmentByCondition, seedExpand, segmentByProduct, uploadUsers } from '@/api/strategy'
+import { useSegmentStore } from '@/stores/segment'
+import { getSegmentList } from '@/api/segment'
+
+const props = defineProps({
+  selectedProducts: { type: Array, default: () => [] },
+  showProductRecommend: { type: Boolean, default: true },
+  stepLabel: { type: String, default: 'setp2' }
+})
+
+const emit = defineEmits(['change'])
+
+const store = useSegmentStore()
+const savedSegments = computed(() => store.savedSegments)
+
+const condition = reactive({ segmentName: '', count: 0, loading: false, confirmed: false })
+const seed = reactive({ target: 100000, seeds: '', count: 0, compLoading: false, confirmed: false })
+const productSeg = reactive({ target: 100000, count: 0, loading: false, confirmed: false })
+const upload = reactive({ file: null, count: 0, loading: false, confirmed: false })
+
+const methodCount = computed(() => (props.showProductRecommend ? 4 : 3))
+
+const totalCount = computed(() => {
+  let sum = 0
+  if (condition.confirmed) sum += condition.count
+  if (seed.confirmed) sum += seed.count
+  if (productSeg.confirmed) sum += productSeg.count
+  if (upload.confirmed) sum += upload.count
+  return sum
+})
+
+watch(totalCount, () => emitChange())
+
+function emitChange() {
+  const parts = []
+  if (condition.confirmed) parts.push({ method: 'condition', name: condition.segmentName, count: condition.count })
+  if (seed.confirmed) parts.push({ method: 'seed', count: seed.count })
+  if (productSeg.confirmed) parts.push({ method: 'product', count: productSeg.count })
+  if (upload.confirmed) parts.push({ method: 'upload', count: upload.count })
+  emit('change', {
+    total: totalCount.value,
+    parts,
+    conditionName: condition.segmentName,
+    condition: savedSegments.value.find((s) => s.name === condition.segmentName)?.condition || ''
+  })
+}
+
+function cancelMethod(key) {
+  if (key === 'condition') {
+    condition.count = 0
+    condition.confirmed = false
+    condition.segmentName = ''
+  } else if (key === 'seed') {
+    seed.count = 0
+    seed.confirmed = false
+    seed.seeds = ''
+  } else if (key === 'productSeg') {
+    productSeg.count = 0
+    productSeg.confirmed = false
+  } else if (key === 'upload') {
+    upload.count = 0
+    upload.confirmed = false
+    upload.file = null
+  }
+  emitChange()
+}
+
+function confirmMethod(key) {
+  if (key === 'seed') {
+    if (!seed.count) {
+      ElMessage.warning('请先点击 开始计算')
+      return
+    }
+    seed.confirmed = true
+    emitChange()
+    ElMessage.success('已加入待运营客群')
+  }
+}
+
+async function runCondition() {
+  if (!condition.segmentName) {
+    ElMessage.warning('请先选择客群')
+    return
+  }
+  const found = savedSegments.value.find((s) => s.name === condition.segmentName)
+  condition.loading = true
+  try {
+    const res = await segmentByCondition({ name: condition.segmentName, condition: found?.condition })
+    condition.count = res.count
+    condition.confirmed = true
+    emitChange()
+    ElMessage.success('已加入待运营客群')
+  } finally {
+    condition.loading = false
+  }
+}
+
+async function runSeedCompute() {
+  if (!seed.seeds.trim()) {
+    ElMessage.warning('请输入种子 user_id / 电话号')
+    return
+  }
+  seed.compLoading = true
+  try {
+    const res = await seedExpand({ seeds: seed.seeds, target: seed.target })
+    seed.count = res.count
+    ElMessage.success(`已扩散至 ${res.count.toLocaleString()} 人`)
+  } finally {
+    seed.compLoading = false
+  }
+}
+
+async function runProductSeg() {
+  if (!props.selectedProducts.length) {
+    ElMessage.warning('请先在产品库选择产品')
+    return
+  }
+  productSeg.loading = true
+  try {
+    const res = await segmentByProduct({
+      productIds: props.selectedProducts.map((p) => p.id),
+      target: productSeg.target
+    })
+    productSeg.count = res.count
+    productSeg.confirmed = true
+    emitChange()
+    ElMessage.success('已加入待运营客群')
+  } finally {
+    productSeg.loading = false
+  }
+}
+
+function handleFileChange(file) {
+  upload.file = file.raw
+  upload.count = 0
+  upload.confirmed = false
+}
+
+async function runUpload() {
+  if (!upload.file) return
+  const fd = new FormData()
+  fd.append('file', upload.file)
+  upload.loading = true
+  try {
+    const res = await uploadUsers(fd)
+    upload.count = res.count
+    upload.confirmed = true
+    emitChange()
+    ElMessage.success('已加入待运营客群')
+  } finally {
+    upload.loading = false
+  }
+}
+
+onMounted(async () => {
+  if (!store.savedSegments.length) {
+    try {
+      const list = await getSegmentList()
+      store.setList(list)
+    } catch (e) {}
+  }
+})
+</script>
+
+<style lang="scss" scoped>
+.segment-selector {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 20px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-ico {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sec-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #303133;
+}
+.step-badge {
+  background: #eef3fb;
+  color: #1e6ecf;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.total {
+  margin-left: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  .total-label {
+    color: #909399;
+    font-size: 12px;
+  }
+  .total-value {
+    color: #1e6ecf;
+    font-size: 20px;
+    font-weight: 800;
+    .unit {
+      font-size: 12px;
+      margin-left: 2px;
+      color: #606266;
+    }
+  }
+}
+.sec-desc {
+  color: #909399;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+.methods-grid {
+  display: grid;
+  gap: 12px;
+  &.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.method-card {
+  background: #f8fafd;
+  border: 1px solid #e5edf8;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s;
+  &.active {
+    border-color: #1e6ecf;
+    background: #f0f6ff;
+  }
+}
+.mc-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mc-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.c-blue {
+    background: #eaf1fb;
+    color: #1e6ecf;
+  }
+}
+.mc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #303133;
+}
+.mc-sub {
+  font-size: 12px;
+  color: #606266;
+  margin-top: 2px;
+}
+.mc-sub-small {
+  font-size: 11px;
+  color: #909399;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mc-list {
+  background: #fff;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  padding: 4px 8px;
+  max-height: 88px;
+  overflow-y: auto;
+  .mc-li {
+    padding: 2px 0;
+    :deep(.el-checkbox__label) {
+      font-size: 12px;
+    }
+  }
+}
+.mc-count {
+  font-size: 12px;
+  color: #303133;
+  strong {
+    color: #1e6ecf;
+    font-size: 14px;
+    margin: 0 2px;
+  }
+  margin-top: auto;
+}
+.mc-box {
+  position: relative;
+  background: #fff;
+  border: 1px solid #dce3ef;
+  border-radius: 4px;
+  padding: 6px 8px 30px;
+  textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 12px;
+    color: #303133;
+    &::placeholder {
+      color: #c0c4cc;
+      font-size: 11px;
+    }
+  }
+}
+.mc-inline-btn {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  background: #1e6ecf;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+.mc-ring {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+}
+.mc-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+.btn-ghost,
+.btn-primary {
+  flex: 1;
+  padding: 6px 0;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+.btn-ghost {
+  background: #fff;
+  color: #606266;
+  border-color: #dce3ef;
+  &:hover {
+    color: #1e6ecf;
+    border-color: #1e6ecf;
+  }
+}
+.btn-primary {
+  background: #1e6ecf;
+  color: #fff;
+  &:hover:not(:disabled) {
+    background: #1857a8;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+.up-drag :deep(.el-upload-dragger) {
+  height: 84px;
+  padding: 6px;
+  background: #fff;
+  border: 1px dashed #c7d3e6;
+}
+.upload-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #909399;
+  font-size: 11px;
+  padding-top: 2px;
+}
+.upload-cloud {
+  color: #1e6ecf;
+}
+</style>
