@@ -82,45 +82,50 @@
 
       <!-- 右侧：生命周期 + 高低价值 + 诊断 -->
       <div class="right-pane">
-        <!-- 5 生命周期卡片 -->
-        <div class="lifecycle-row">
-          <div v-for="lc in analysis.lifecycle" :key="lc.key" class="lc-card">
-            <div class="lc-head">{{ lc.label }}</div>
-            <div class="lc-value">
-              <CountNumber :end="lc.value" :decimals="2" />
-              <span class="lc-unit">W</span>
+        <div class="overview-panel">
+          <!-- 5 生命周期卡片 -->
+          <div class="lifecycle-row">
+            <div v-for="(lc, idx) in analysis.lifecycle" :key="lc.key" class="lc-card" :class="`lc-card-${idx}`">
+              <div class="lc-head">{{ lc.label }}</div>
+              <div class="lc-value">
+                <CountNumber :end="lc.value" :decimals="2" />
+                <span class="lc-unit">W</span>
+              </div>
+              <div class="lc-desc">口径：{{ lc.desc }}</div>
             </div>
-            <div class="lc-desc">口径：{{ lc.desc }}</div>
           </div>
-        </div>
 
-        <!-- 高价值 / 低价值 -->
-        <div class="value-card">
-          <div class="vc-grid">
-            <div class="vc-col">
+          <!-- 高价值 / 低价值 -->
+          <div class="value-card">
+            <div class="vc-grid">
               <div class="vc-title">高价值用户</div>
-              <div v-for="(item, i) in highLowData.high" :key="'h' + i" class="vc-row">
-                <span class="vc-num">{{ item.value }}</span>
-                <div class="vc-bar">
-                  <div class="vc-bar-fill hi" :style="{ width: item.percent + '%' }"></div>
-                </div>
-                <span class="vc-label">{{ item.name }}</span>
-              </div>
-            </div>
-            <div class="vc-col">
               <div class="vc-title">低价值</div>
-              <div v-for="(item, i) in highLowData.low" :key="'l' + i" class="vc-row right">
-                <span class="vc-label">{{ item.name }}</span>
-                <div class="vc-bar">
-                  <div class="vc-bar-fill lo" :style="{ width: item.percent + '%' }"></div>
+
+              <div
+                v-for="(item, i) in highLowData.high"
+                :key="'pair' + i"
+                class="vc-pair-row"
+                :class="`vc-pair-${i}`"
+              >
+                <div class="vc-row">
+                  <span class="vc-num">{{ item.value }}</span>
+                  <div class="vc-bar">
+                    <div class="vc-bar-fill hi" :style="{ width: item.percent + '%' }"></div>
+                  </div>
                 </div>
-                <span class="vc-num">{{ item.value }}</span>
+                <span class="vc-mid-label">{{ item.name }}</span>
+                <div class="vc-row right">
+                  <div class="vc-bar">
+                    <div class="vc-bar-fill lo" :style="{ width: highLowData.low[i]?.percent + '%' }"></div>
+                  </div>
+                  <span class="vc-num">{{ highLowData.low[i]?.value ?? 0 }}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="vc-footer">
-            <div class="vc-footer-title">全生命周期分布</div>
-            <div class="vc-footer-sub">全生命周期内使用户价值曲线和差异性运营的直接指标</div>
+            <div class="vc-footer">
+              <div class="vc-footer-title">全生命周期分布</div>
+              <div class="vc-footer-sub">全生命周期内使用户价值曲线和差异性运营的直接指标</div>
+            </div>
           </div>
         </div>
 
@@ -129,14 +134,14 @@
           <div class="diag-label">客群诊断</div>
           <div class="diag-body">
             <EChart :option="radarOption" height="260px" />
-            <el-table :data="analysis.diagnosisTable" size="small" border style="flex:1">
-              <el-table-column prop="period" label="" width="72" />
-              <el-table-column prop="sticky" label="粘性" />
-              <el-table-column prop="value" label="价值" />
-              <el-table-column prop="compete" label="竞抢" />
-              <el-table-column prop="sense" label="感知" />
-              <el-table-column prop="active" label="活跃" />
-              <el-table-column prop="spread" label="传播" />
+            <el-table class="diag-table" :data="analysis.diagnosisTable" size="small" border style="flex:1">
+              <el-table-column prop="period" label="阶段" width="88" />
+              <el-table-column prop="sticky" label="粘性" width="74" />
+              <el-table-column prop="value" label="价值" width="74" />
+              <el-table-column prop="compete" label="竞抢" width="74" />
+              <el-table-column prop="sense" label="感知" width="74" />
+              <el-table-column prop="active" label="活跃" width="74" />
+              <el-table-column prop="spread" label="传播" width="74" />
             </el-table>
           </div>
         </div>
@@ -225,6 +230,24 @@ const radarOption = computed(() => ({
       itemStyle: { color: '#1e6ecf' },
       symbolSize: 5,
       data: analysis.radar.value && analysis.radar.value.length ? [{ value: analysis.radar.value, name: '客群诊断' }] : []
+    },
+     {
+      type: 'radar',
+      areaStyle: { color: 'rgba(80,200,120,0.18)' }, // 绿色半透明填充
+      lineStyle: { color: '#50c878', width: 2 },      // 绿色线条
+      itemStyle: { color: '#50c878' },               // 绿色顶点
+      symbolSize: 5,
+      // 注意：这里需要替换成你的第二条线的数据
+      data: analysis.radar.value2 && analysis.radar.value2.length ? [{ value: analysis.radar.value2, name: '对比客群1' }] : []
+    },
+    {
+      type: 'radar',
+      areaStyle: { color: 'rgba(255,165,0,0.18)' },  // 橙色半透明填充
+      lineStyle: { color: '#ffa500', width: 2 },      // 橙色线条
+      itemStyle: { color: '#ffa500' },               // 橙色顶点
+      symbolSize: 5,
+      // 注意：这里需要替换成你的第三条线的数据
+      data: analysis.radar.value3 && analysis.radar.value3.length ? [{ value: analysis.radar.value3, name: '对比客群2' }] : []
     }
   ]
 }))
@@ -331,7 +354,10 @@ onMounted(async () => {
 .right-pane {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+}
+.right-pane {
+  height: 100%;
 }
 
 /* 助手卡 */
@@ -467,86 +493,112 @@ onMounted(async () => {
 .lifecycle-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: 0;
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 109px;
 }
 .lc-card {
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(230, 238, 248, 0.25) 100%);
   overflow: hidden;
   .lc-head {
-    background: #eaf1fb;
-    color: #1e6ecf;
+    background: transparent;
+    color: #8e99aa;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 16px;
     text-align: center;
-    padding: 6px 0;
+    line-height: 20px;
+    padding: 4px 0 2px;
   }
   .lc-value {
     text-align: center;
-    padding: 10px 6px 4px;
-    font-size: 18px;
+    padding: 9px 6px 8px;
+    font-size: 26px;
+    line-height: 1;
     font-weight: 700;
-    color: #1e6ecf;
-    background: linear-gradient(180deg, #c8dcf5 0%, #e5eef9 100%);
+    color: #fff;
+    background: #2f77b8;
     .lc-unit {
-      font-size: 12px;
+      font-size: 15px;
       margin-left: 2px;
     }
   }
   .lc-desc {
-    padding: 6px 8px 10px;
-    font-size: 10px;
-    color: #606266;
-    background: linear-gradient(180deg, #e5eef9 0%, #fff 100%);
-    text-align: center;
+    padding: 8px 9px;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #2f3640;
+    background: transparent;
     min-height: 42px;
+    text-align: left;
+    word-break: break-word;
   }
+}
+.lc-card-1 .lc-value,
+.lc-card-3 .lc-value {
+  background: #17a8dd;
+}
+.lc-card-2 .lc-value {
+  background: #235786;
 }
 
 /* 高/低价值卡 */
-.value-card {
-  background: #fff;
+.overview-panel {
   border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 8px 10px 12px;
+  background: linear-gradient(180deg, #eaf2fb 0%, #ffffff 52%, #eaf2fb 100%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+.value-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 14px 6px 0;
+  box-shadow: none;
 }
 .vc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  column-gap: 72px;
+  row-gap: 6px;
 }
 .vc-title {
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
-  color: #303133;
-  margin-bottom: 12px;
+  color: #2f3440;
+  margin-bottom: 8px;
+}
+.vc-pair-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 72px 1fr;
+  align-items: center;
+  column-gap: 10px;
+}
+.vc-mid-label {
+  font-size: 14px;
+  color: #4b5260;
+  text-align: center;
+  font-weight: 600;
 }
 .vc-row {
   display: grid;
-  grid-template-columns: 42px 1fr 50px;
+  grid-template-columns: 42px 1fr;
   align-items: center;
   gap: 6px;
-  margin-bottom: 6px;
+  margin-bottom: 0;
   &.right {
-    grid-template-columns: 50px 1fr 42px;
+    grid-template-columns: 1fr 42px;
   }
   .vc-num {
     font-size: 12px;
     color: #606266;
     text-align: right;
   }
-  .vc-label {
-    font-size: 12px;
-    color: #606266;
-    text-align: left;
-  }
   &.right .vc-num {
     text-align: left;
-  }
-  &.right .vc-label {
-    text-align: right;
   }
 }
 .vc-bar {
@@ -557,36 +609,68 @@ onMounted(async () => {
 }
 .vc-row:not(.right) .vc-bar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 .vc-row.right .vc-bar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .vc-bar-fill {
   height: 100%;
   border-radius: 2px;
   transition: width 0.8s;
   &.hi {
-    background: linear-gradient(90deg, #a6c8eb, #4a90e2);
+    background: #8ab6e4;
   }
   &.lo {
-    background: linear-gradient(90deg, #103a70, #1e6ecf);
+    background: #2f6fb7;
   }
+}
+.vc-pair-0 .vc-bar-fill.hi {
+  background: #8fb4d7;
+}
+.vc-pair-1 .vc-bar-fill.hi {
+  background: #7fc8e3;
+}
+.vc-pair-2 .vc-bar-fill.hi {
+  background: #9fb6c9;
+}
+.vc-pair-3 .vc-bar-fill.hi {
+  background: #77c2e3;
+}
+.vc-pair-4 .vc-bar-fill.hi {
+  background: #8fb3d3;
+}
+
+.vc-pair-0 .vc-bar-fill.lo {
+  background: #2f6fb7;
+}
+.vc-pair-1 .vc-bar-fill.lo {
+  background: #1aa9dc;
+}
+.vc-pair-2 .vc-bar-fill.lo {
+  background: #1f4f83;
+}
+.vc-pair-3 .vc-bar-fill.lo {
+  background: #18a8dc;
+}
+.vc-pair-4 .vc-bar-fill.lo {
+  background: #2f6fb7;
 }
 .vc-footer {
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px dashed #e4e7ed;
+  border-top: 1px dashed #cfddef;
   .vc-footer-title {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
-    color: #303133;
+    color: #424b57;
   }
   .vc-footer-sub {
-    font-size: 11px;
-    color: #909399;
-    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #5f6b79;
+    margin-top: 6px;
   }
 }
 
@@ -597,6 +681,7 @@ onMounted(async () => {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   overflow: hidden;
+  flex: 1;
   min-height: 260px;
 }
 .diag-label {
@@ -614,7 +699,7 @@ onMounted(async () => {
 }
 .diag-body {
   flex: 1;
-  padding: 12px;
+  padding: 12px 20px 12px 12px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -624,5 +709,21 @@ onMounted(async () => {
 }
 .diag-body > :deep(.echart-container) {
   flex: 1;
+}
+:deep(.diag-table) {
+  min-width: 532px;
+}
+:deep(.diag-table .el-table__header th) {
+  background: #ececec;
+  color: #333;
+  font-weight: 700;
+  height: 42px;
+}
+:deep(.diag-table .el-table__body td) {
+  height: 54px;
+  color: #333;
+}
+:deep(.diag-table .el-table__cell) {
+  border-color: #cfcfcf;
 }
 </style>

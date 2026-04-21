@@ -58,6 +58,25 @@ function extractFromWhere(sql) {
   return m ? m[1].trim() : 'FROM user_behavior'
 }
 
+const diagnosisDefault = [
+  { period: '入网期', sticky: 100, value: 140, compete: 230, sense: 100, active: 130, spread: 148 },
+  { period: '成长期', sticky: 150, value: 100, compete: 200, sense: 140, active: 100, spread: 140 },
+  { period: '成熟期', sticky: 194, value: 120, compete: 132, sense: 165, active: 220, spread: 152 }
+]
+
+function normalizeDiagnosisTable(rows) {
+  if (!Array.isArray(rows) || !rows.length) return diagnosisDefault
+  return rows.map((row) => ({
+    period: row.period || row.stage || '',
+    sticky: Number(row.sticky) || 0,
+    value: Number(row.value) || 0,
+    compete: Number(row.compete) || 0,
+    sense: Number(row.sense) || 0,
+    active: Number(row.active) || 0,
+    spread: Number(row.spread) || 0
+  }))
+}
+
 export const multiAnalysis = createApi(
   async ({ sql } = {}) => {
     const fromWhere = extractFromWhere(sql)
@@ -139,16 +158,8 @@ export const multiAnalysis = createApi(
       value: rRow.map((v) => Number(v) || 0)
     }
 
-    // 诊断表格：按阶段 * 6 维，当前后端没有直接接口，沿用雷达总值做示意
-    const diagnosisTable = stageOrder.map((stage) => ({
-      period: stage,
-      sticky: Math.round((rRow[0] || 0) * 0.9),
-      value: Math.round((rRow[1] || 0) * 0.9),
-      compete: Math.round((rRow[2] || 0) * 0.9),
-      sense: Math.round((rRow[3] || 0) * 0.9),
-      active: Math.round((rRow[4] || 0) * 0.9),
-      spread: Math.round((rRow[5] || 0) * 0.9)
-    }))
+    // 诊断表格：优先使用后端返回 diagnosisTable；未返回时使用图二默认示意数据
+    const diagnosisTable = normalizeDiagnosisTable(rRes?.diagnosisTable)
 
     return { lifecycle, valueBar, radar, diagnosisTable, sql }
   },

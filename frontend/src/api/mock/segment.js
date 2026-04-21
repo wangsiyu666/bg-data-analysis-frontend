@@ -70,14 +70,15 @@ export const mockSegment = {
           { name: '活跃', max: 100 },
           { name: '传播', max: 100 }
         ],
-        value: [85, 70, 62, 78, 92, 45]
+        value: [85, 70, 62, 78, 92, 45],
+        value2: [45, 23, 9, 67, 21, 11],
+        value3: [85, 70, 32, 43, 87, 32]
+
       },
       diagnosisTable: [
-        { period: '入网期', sticky: 85, value: 70, compete: 62, sense: 78, active: 92, spread: 45 },
-        { period: '成长期', sticky: 78, value: 82, compete: 70, sense: 80, active: 88, spread: 55 },
-        { period: '成熟期', sticky: 90, value: 85, compete: 76, sense: 82, active: 85, spread: 60 },
-        { period: '异动期', sticky: 65, value: 60, compete: 58, sense: 62, active: 70, spread: 42 },
-        { period: '离网期', sticky: 40, value: 35, compete: 30, sense: 40, active: 38, spread: 22 }
+        { period: '入网期', sticky: 100, value: 140, compete: 230, sense: 100, active: 130, spread: 148 },
+        { period: '成长期', sticky: 150, value: 100, compete: 200, sense: 140, active: 100, spread: 140 },
+        { period: '成熟期', sticky: 194, value: 120, compete: 132, sense: 165, active: 220, spread: 152 }
       ],
       sql
     }
