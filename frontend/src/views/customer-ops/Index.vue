@@ -17,7 +17,11 @@
       v-model="selectedProducts"
       :products="products"
       :enable-segment-recommend="true"
-      :current-segment="{ name: segmentInfo.conditionName, count: segmentInfo.total }"
+      :current-segment="{
+        name: segmentInfo.conditionName,
+        count: segmentInfo.total,
+        audienceIds: segmentInfo.audienceIds
+      }"
       step-label="setp2"
       @update:products="(list) => (products = list)"
       class="block-mt"
@@ -34,6 +38,9 @@
       :execution-data="executionData"
       :predict-data="predictData"
       :selected-products="selectedProducts"
+      :audience-ids="segmentInfo.audienceIds"
+      :plan-id="planId"
+      :script-ids="scriptIds"
       :segment-count="segmentInfo.total"
       publish-label="发布策略"
       class="block-mt"
@@ -51,13 +58,22 @@ import GenerateBar from '@/components/ops/GenerateBar.vue'
 import StrategyArea from '@/components/ops/StrategyArea.vue'
 import { recommendProducts, searchProducts } from '@/api/product'
 import { generateStrategy, executeStrategy, predictStrategy } from '@/api/strategy'
+import { useSegmentStore } from '@/stores/segment'
+
+const store = useSegmentStore()
 
 const assistantText = ref('')
 const assistantLoading = ref(false)
 const products = ref([])
 const selectedProducts = ref([])
 
-const segmentInfo = reactive({ total: 0, parts: [], conditionName: '', condition: '' })
+const segmentInfo = reactive({
+  total: 0,
+  parts: [],
+  conditionName: '',
+  condition: '',
+  audienceIds: []
+})
 const generateText = ref('')
 const generateLoading = ref(false)
 
@@ -65,11 +81,15 @@ const strategyData = ref(null)
 const executionData = ref(null)
 const predictData = ref(null)
 
+const planId = ref('')
+const scriptIds = ref([])
+
 function handleSegmentChange(info) {
   segmentInfo.total = info.total
   segmentInfo.parts = info.parts
   segmentInfo.conditionName = info.conditionName
   segmentInfo.condition = info.condition
+  segmentInfo.audienceIds = info.audienceIds || []
 }
 
 async function handleAnalyze(text) {
@@ -92,11 +112,17 @@ async function handleGenerate(text) {
     ElMessage.warning('请先圈选客群')
     return
   }
+  if (!selectedProducts.value.length) {
+    ElMessage.warning('请先选择产品')
+    return
+  }
   generateLoading.value = true
   try {
+    // §4 生成策略
     const strategyRes = await generateStrategy({
       text: text || assistantText.value,
       products: selectedProducts.value,
+      audienceIds: segmentInfo.audienceIds,
       segment: {
         name: segmentInfo.conditionName,
         condition: segmentInfo.condition,
@@ -104,10 +130,24 @@ async function handleGenerate(text) {
       }
     })
     strategyData.value = strategyRes
-    const execRes = await executeStrategy({ strategyId: strategyRes.id })
+    store.setStrategyId(strategyRes.id)
+
+    // §5 执行优化
+    const execRes = await executeStrategy({
+      strategyId: strategyRes.id,
+      productIds: selectedProducts.value.map((p) => p.id),
+      audienceIds: segmentInfo.audienceIds,
+      text: text || assistantText.value
+    })
     executionData.value = execRes
+    planId.value = execRes.planId
+    scriptIds.value = execRes.scriptIds
+    store.setExecutionArtifacts({ planId: execRes.planId, scriptIds: execRes.scriptIds })
+
+    // §6 评估
     const predRes = await predictStrategy({ strategyId: strategyRes.id, dimension: 'region' })
     predictData.value = predRes
+
     ElMessage.success('策略已生成')
   } finally {
     generateLoading.value = false

@@ -202,6 +202,9 @@ const props = defineProps({
   executionData: { type: Object, default: null },
   predictData: { type: Object, default: null },
   selectedProducts: { type: Array, default: () => [] },
+  audienceIds: { type: Array, default: () => [] },
+  planId: { type: String, default: '' },
+  scriptIds: { type: Array, default: () => [] },
   segmentCount: { type: Number, default: 0 },
   publishLabel: { type: String, default: '发布策略' }
 })
@@ -396,18 +399,14 @@ async function handlePublish() {
   }
   publishLoading.value = true
   try {
-    const channel = execution.channels.find((c) => c.id === selectedChannelId.value)
-    const script = currentScripts.value.find((s) => s.id === selectedScriptId.value)
-    await publishStrategy({
-      strategy,
-      channel,
-      script,
-      products: props.selectedProducts,
-      frequency: execution.frequency,
-      bestTime: execution.bestTime,
-      segmentSize: strategy.segmentSize
+    const res = await publishStrategy({
+      strategyId: strategy.id,
+      productIds: (props.selectedProducts || []).map((p) => p.id),
+      audienceIds: props.audienceIds || [],
+      planId: props.planId || '',
+      scriptIds: props.scriptIds || []
     })
-    ElMessage.success('策略发布成功！已更新到产品/策略/话术/执行计划/客群表')
+    ElMessage.success(res?.message || '策略发布成功')
     emit('publish')
   } finally {
     publishLoading.value = false

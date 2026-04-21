@@ -159,10 +159,10 @@ const emit = defineEmits(['change'])
 const store = useSegmentStore()
 const savedSegments = computed(() => store.savedSegments)
 
-const condition = reactive({ segmentName: '', count: 0, loading: false, confirmed: false })
-const seed = reactive({ target: 100000, seeds: '', count: 0, compLoading: false, confirmed: false })
-const productSeg = reactive({ target: 100000, count: 0, loading: false, confirmed: false })
-const upload = reactive({ file: null, count: 0, loading: false, confirmed: false })
+const condition = reactive({ segmentName: '', count: 0, audienceIds: [], loading: false, confirmed: false })
+const seed = reactive({ target: 100000, seeds: '', count: 0, audienceIds: [], compLoading: false, confirmed: false })
+const productSeg = reactive({ target: 100000, count: 0, audienceIds: [], loading: false, confirmed: false })
+const upload = reactive({ file: null, count: 0, audienceIds: [], loading: false, confirmed: false })
 
 const methodCount = computed(() => (props.showProductRecommend ? 4 : 3))
 
@@ -179,13 +179,30 @@ watch(totalCount, () => emitChange())
 
 function emitChange() {
   const parts = []
-  if (condition.confirmed) parts.push({ method: 'condition', name: condition.segmentName, count: condition.count })
-  if (seed.confirmed) parts.push({ method: 'seed', count: seed.count })
-  if (productSeg.confirmed) parts.push({ method: 'product', count: productSeg.count })
-  if (upload.confirmed) parts.push({ method: 'upload', count: upload.count })
+  const audienceIds = []
+  if (condition.confirmed) {
+    parts.push({ method: 'condition', name: condition.segmentName, count: condition.count })
+    audienceIds.push(...condition.audienceIds)
+  }
+  if (seed.confirmed) {
+    parts.push({ method: 'seed', count: seed.count })
+    audienceIds.push(...seed.audienceIds)
+  }
+  if (productSeg.confirmed) {
+    parts.push({ method: 'product', count: productSeg.count })
+    audienceIds.push(...productSeg.audienceIds)
+  }
+  if (upload.confirmed) {
+    parts.push({ method: 'upload', count: upload.count })
+    audienceIds.push(...upload.audienceIds)
+  }
+  // 去重
+  const uniqIds = Array.from(new Set(audienceIds))
+  store.setAudienceIds(uniqIds)
   emit('change', {
     total: totalCount.value,
     parts,
+    audienceIds: uniqIds,
     conditionName: condition.segmentName,
     condition: savedSegments.value.find((s) => s.name === condition.segmentName)?.condition || ''
   })
@@ -194,17 +211,21 @@ function emitChange() {
 function cancelMethod(key) {
   if (key === 'condition') {
     condition.count = 0
+    condition.audienceIds = []
     condition.confirmed = false
     condition.segmentName = ''
   } else if (key === 'seed') {
     seed.count = 0
+    seed.audienceIds = []
     seed.confirmed = false
     seed.seeds = ''
   } else if (key === 'productSeg') {
     productSeg.count = 0
+    productSeg.audienceIds = []
     productSeg.confirmed = false
   } else if (key === 'upload') {
     upload.count = 0
+    upload.audienceIds = []
     upload.confirmed = false
     upload.file = null
   }
@@ -228,11 +249,11 @@ async function runCondition() {
     ElMessage.warning('请先选择客群')
     return
   }
-  const found = savedSegments.value.find((s) => s.name === condition.segmentName)
   condition.loading = true
   try {
-    const res = await segmentByCondition({ name: condition.segmentName, condition: found?.condition })
+    const res = await segmentByCondition({ name: condition.segmentName })
     condition.count = res.count
+    condition.audienceIds = res.audienceIds || []
     condition.confirmed = true
     emitChange()
     ElMessage.success('已加入待运营客群')
@@ -250,6 +271,7 @@ async function runSeedCompute() {
   try {
     const res = await seedExpand({ seeds: seed.seeds, target: seed.target })
     seed.count = res.count
+    seed.audienceIds = res.audienceIds || []
     ElMessage.success(`已扩散至 ${res.count.toLocaleString()} 人`)
   } finally {
     seed.compLoading = false
@@ -268,6 +290,7 @@ async function runProductSeg() {
       target: productSeg.target
     })
     productSeg.count = res.count
+    productSeg.audienceIds = res.audienceIds || []
     productSeg.confirmed = true
     emitChange()
     ElMessage.success('已加入待运营客群')
@@ -290,6 +313,7 @@ async function runUpload() {
   try {
     const res = await uploadUsers(fd)
     upload.count = res.count
+    upload.audienceIds = res.audienceIds || []
     upload.confirmed = true
     emitChange()
     ElMessage.success('已加入待运营客群')

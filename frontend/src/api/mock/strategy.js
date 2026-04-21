@@ -6,21 +6,28 @@ function rand(min, max) {
 
 export const mockStrategy = {
   segmentByCondition({ name, condition } = {}) {
-    return { count: rand(1200000, 15800000), name, condition }
+    const count = rand(1200000, 15800000)
+    const audienceIds = Array.from({ length: Math.min(20, count) }, (_, i) => `user_${i + 1}`)
+    return { count, name, condition, audienceIds }
   },
 
   seedExpand({ seeds = '', target = 100000 } = {}) {
     const count = Math.min(Number(target) || 100000, 20000000)
-    return { count, expanded: count }
+    const audienceIds = Array.from({ length: Math.min(20, count) }, (_, i) => `user_seed_${i + 1}`)
+    return { count, expanded: count, audienceIds }
   },
 
   segmentByProduct({ productIds = [], target = 100000 } = {}) {
     const count = Math.min(Number(target) || 100000, 20000000) * Math.max(1, productIds.length)
-    return { count: Math.min(count, 25000000) }
+    const total = Math.min(count, 25000000)
+    const audienceIds = Array.from({ length: Math.min(20, total) }, (_, i) => `user_prod_${i + 1}`)
+    return { count: total, audienceIds }
   },
 
   uploadUsers() {
-    return { count: rand(5000, 200000) }
+    const count = rand(5000, 200000)
+    const audienceIds = Array.from({ length: Math.min(20, count) }, (_, i) => `user_up_${i + 1}`)
+    return { count, audienceIds }
   },
 
   generate({ text, products = [], segment } = {}) {
@@ -81,7 +88,9 @@ export const mockStrategy = {
         ]
       },
       frequency: { level: '标准', times: 2, options: [{ label: '保守', times: 1 }, { label: '标准', times: 2 }, { label: '激进', times: 4 }] },
-      bestTime: { weekdays: [2, 4, 6], label: '周二 / 周四 / 周六 19:00 - 21:00 转化率最高' }
+      bestTime: { weekdays: [2, 4, 6], label: '周二 / 周四 / 周六 19:00 - 21:00 转化率最高' },
+      planId: 'PLAN_mock_' + Date.now(),
+      scriptIds: ['SCR_1', 'SCR_2', 'SCR_3', 'SCR_4']
     }
   },
 

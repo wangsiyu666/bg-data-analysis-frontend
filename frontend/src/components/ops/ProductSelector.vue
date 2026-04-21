@@ -132,7 +132,11 @@ async function handleRecommendBySegment() {
   }
   recommendLoading.value = true
   try {
-    const res = await recommendBySegment({ segment: props.currentSegment })
+    const res = await recommendBySegment({
+      segment: props.currentSegment,
+      audienceIds: props.currentSegment.audienceIds || [],
+      text: props.currentSegment.name || '希望提升ARPU'
+    })
     emit('update:products', res)
     ElMessage.success('已推荐适配客群的产品')
   } finally {

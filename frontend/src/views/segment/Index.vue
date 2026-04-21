@@ -156,7 +156,7 @@ import { useSegmentStore } from '@/stores/segment'
 const store = useSegmentStore()
 
 const askText = ref('分析 ARPU>89 的客群')
-const sqlText = ref('select city_id,user_online,sex_id,count(*) from *** where arpu>80;')
+const sqlText = ref('SELECT city_id, sex_id, count(*) AS cnt FROM user_behavior WHERE arpu > 80 GROUP BY city_id, sex_id LIMIT 20')
 const askLoading = ref(false)
 const queryLoading = ref(false)
 const analysisLoading = ref(false)
@@ -284,11 +284,11 @@ async function handleSaveSegment() {
       inputPattern: /.+/,
       inputErrorMessage: '客群名称不能为空'
     })
-    const fromMatch = sqlText.value.match(/(FROM[\s\S]*?)(?:group by|order by|limit|;|$)/i)
-    const condition = fromMatch ? fromMatch[1].trim() : sqlText.value
-    const res = await saveSegment({ name, condition })
-    store.addSegment({ name, condition, id: res.id })
-    ElMessage.success('客群已保存')
+    // 后端 /audience/save 接收完整 SQL（condition_sql），
+    // 若为聚合 SQL，后端会自动改写为 SELECT user_id FROM ... WHERE ...
+    const res = await saveSegment({ name, condition: sqlText.value })
+    store.addSegment({ name, condition: sqlText.value, id: res.id })
+    ElMessage.success('客群已保存：' + res.id)
   } catch (e) {
     if (e !== 'cancel') console.warn(e)
   }

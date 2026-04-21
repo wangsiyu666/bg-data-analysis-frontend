@@ -1,0 +1,442 @@
+================================================================================
+PARAGRAPHS
+================================================================================
+[P0] telecompass智能体前后端接口说明
+[P2] 客群分析
+[P3] 客群分析-输入框
+[P5] 接口：POST /audience/nl2sql
+[P6] 用途：用户输入自然语言问题，后端生成 SQL 语句（不执行），供运营者查看或修改。
+[P7] 请求参数：
+[P8] {
+[P9] "question": "上个月流量超套用户有多少？按地市拆分",
+[P10] "user_id": "demo"
+[P11] }
+[P12] 请求示例：
+[P13] curl -X POST http://localhost:8000/api/v1/audience/nl2sql \
+[P14]   -H "Content-Type: application/json" \
+[P15]   -d '{"question":"上个月流量超套用户有多少？","user_id":"demo"}'
+[P16] 后端调用链：
+[P17] routes.py -> simple_agents.run_nl2sql() -> services/audience_analysis.nl2sql()-> services/vanna_service.generate_sql() -> (Vanna + Ollama)
+[P18] 响应示例：
+[P19] {
+[P20] "sql": "SELECT city_id, COUNT(*) FROM user_behavior WHERE flow_overflow > 0 AND event_date BETWEEN '2025-03-01' AND '2025-03-31' GROUP BY city_id"
+[P21] }
+[P22] 前端使用：
+[P23] 将返回的 sql 填充到 SQL 编辑区，如下：
+[P26] 用户可修改 SQL 后点击“确定统计”执行。
+[P27] 客群分析-执行SQL查询
+[P29] 接口：POST /audience/execute
+[P30] 用途：执行用户编写的 SQL 语句，返回查询结果（表格数据，已脱敏）。
+[P31] 请求参数：
+[P32] {
+[P33]   "sql": "SELECT user_id, arpu FROM user_behavior WHERE arpu > 100 LIMIT 10",
+[P34]   "user_id": "demo"
+[P35] }
+[P36] 后端调用链：
+[P37] routes.py -> simple_agents.run_execute_sql() -> services/audience_analysis.execute_analysis()
+[P38]     -> services/clickhouse_service.execute_sql() (带重试装饰器)
+[P39] 响应示例：
+[P40] {
+[P41]   "columns": ["user_id", "arpu"],
+[P42]   "data": [["user_abc", 120.5], ["user_def", 135.0]],
+[P43]   "total": 2
+[P44] }
+[P45] 前端数据存放：columns 用于表格列头，data 用于表格行数据，total 用于分页显示。显示位置如下：
+[P47] 客群分析-保存客群（条件 SQL）
+[P49] 接口：POST /audience/save
+[P50] 用途：将满足条件的用户 ID 列表保存到 ClickHouse 的 audience_groups 表中，供后续运营使用。支持明细 SQL（含 user_id）或聚合 SQL（自动改写为 SELECT user_id FROM ... WHERE ...）。
+[P51] 请求参数：
+[P52] {
+[P53]   "name": "高价值用户客群",
+[P54]   "condition_sql": "SELECT user_id FROM user_behavior WHERE arpu > 150",
+[P55]   "user_id": "demo"
+[P56] }
+[P57] 后端调用链：
+[P58] routes.py -> simple_agents.run_save_audience() -> services/audience_analysis.save_audience()
+[P59]     -> 解析 SQL，提取 user_id 列表 -> 批量插入 ClickHouse audience_groups 表
+[P60] 响应示例：
+[P61] {
+[P62]   "status": "success",
+[P63]   "audience_id": "aud_1713600000_abc123"
+[P64] }
+[P65] 或失败时：
+[P66] {
+[P67]   "status": "error",
+[P68]   "message": "未找到任何用户，请检查条件"
+[P69] }
+[P70] 前端数据存放：保存成功后，将返回的 audience_id 存入前端状态（如 Pinia），用于后续产品运营页快速加载客群。或者在产品运营、客群运营的口径方式圈选客群方法中直接去后端数据库表查询去重后的数据
+[P71] 多维分析（刷新右侧图表）
+[P72] 用途：根据客群基础 SQL，刷新客群分析页右侧的生命周期卡片、高/低价值分布图、雷达图、诊断表格。
+[P73] 前端直接写SQL调用后端数据表查询数据
+[P75] 示例1：生命周期卡片（入网期、成长期、成熟期、异动期、离网期的人数）
+[P76] 前端调用：
+[P77] javascript
+[P78] const response = await axios.post('/api/v1/audience/execute', {
+[P79]   sql: `SELECT
+[P80]           countIf(user_online < 6) AS 入网期,
+[P81]           countIf(user_online >= 6 AND user_online < 18) AS 成长期,
+[P82]           countIf(user_online >= 18 AND user_online < 36) AS 成熟期,
+[P83]           countIf(user_online >= 36 AND user_online < 60) AS 异动期,
+[P84]           countIf(user_online >= 60) AS 离网期
+[P85]         FROM user_behavior
+[P86]         WHERE arpu > 100`,
+[P87]   user_id: 'demo'
+[P88] });
+[P89] const data = response.data.data[0]; // 一行数据，例如 [351800, 421600, 352100, 168200, 237800]
+[P90] const lifecycleStages = ['入网期', '成长期', '成熟期', '异动期', '离网期'];
+[P92] 示例2：高/低价值分布（按生命周期阶段）
+[P93] SQL：
+[P95] SELECT
+[P96]     CASE
+[P97]         WHEN user_online < 6 THEN '入网期'
+[P98]         WHEN user_online >= 6 AND user_online < 18 THEN '成长期'
+[P99]         WHEN user_online >= 18 AND user_online < 36 THEN '成熟期'
+[P100]         WHEN user_online >= 36 AND user_online < 60 THEN '异动期'
+[P101]         ELSE '离网期'
+[P102]     END AS stage,
+[P103]     countIf(arpu > 80) AS high,
+[P104]     countIf(arpu <= 80) AS low
+[P105] FROM user_behavior
+[P106] WHERE arpu > 100
+[P107] GROUP BY stage
+[P109] 雷达图（需要六个维度的聚合值）
+[P110] 前端调用：
+[P111] javascript
+[P112] const response = await axios.post('/api/v1/audience/execute', { sql: ' SELECT
+[P113]     sum(is_rhtc) AS 粘性,
+[P114]     avg(arpu) AS 价值,
+[P115]     sum(is_ywsk) AS 竞抢,
+[P116]     sum(is_ts) AS 感知,
+[P117]     sum(active_mark) AS 活跃,
+[P118]     avg(call_opp_counts1) AS 传播
+[P119] FROM user_behavior
+[P120] WHERE arpu > 100
+[P121] ' });
+[P122] const row = response.data.data[0]; // [粘性, 价值, 竞抢, 感知, 活跃, 传播]
+[P123] const radarData = {
+[P124]   粘性: row[0],
+[P125]   价值: row[1],
+[P126]   竞抢: row[2],
+[P127]   感知: row[3],
+[P128]   活跃: row[4],
+[P129]   传播: row[5]
+[P130] };
+[P132] 产品运营、客群运营
+[P133] 2.客群圈选模块
+[P134] 2.1种子扩散法
+[P135] 产品运营和客群运营相同
+[P136] 接口：POST /audience/seed
+[P137] 用途：根据种子用户列表（user_id 或手机号），扩散出相似用户。
+[P138] 请求参数：
+[P139] {
+[P140]   "seed_users": ["user_123", "13812345678"],
+[P141]   "target_count": 1000,
+[P142]   "user_id": "demo"
+[P143] }
+[P144] 后端调用链：
+[P145] routes.py -> simple_agents.run_seed_expansion() -> services/audience_selection.seed_expansion()
+[P146]     -> 调用 _batch_resolve_user_ids()、_get_user_feature_vector()、余弦相似度计算
+[P147] 响应示例：
+[P148] {
+[P149]   "audience_ids": ["user_001", "user_002", ...],
+[P150]   "total": 1000
+[P151] }
+[P152] 前端数据存放：将 audience_ids 保存到全局 store（如 Pinia）中，作为当前客群 ID 列表，供后续策略生成等使用。total 用于显示圈选用户数。
+[P154] 2.2 特征组合法（仅圈选，不返回表格）
+[P155] 产品运营和客群运营相同
+[P156] 接口：POST /audience/feature
+[P157] 用途：根据自然语言条件圈选客群，或从已保存的客群名称读取用户清单。只返回 audience_ids 和总数，不返回表格数据（表格数据通过预览接口获取）。
+[P158] 请求参数：
+[P159] // 方式2：使用已保存客群
+[P160] {
+[P161]   "audience_name": "高价值客群",
+[P162]   "user_id": "demo"
+[P163] }
+[P164] 后端调用链：
+[P165] routes.py → simple_agents.run_feature_selection() → services/audience_selection.feature_selection()
+[P166] 响应示例：
+[P167] {
+[P168]   "audience_ids": ["user_001", "user_002", ...],
+[P169]   "total": 5234
+[P170] }
+[P171] 前端存放：将 audience_ids 存入全局 store，total 用于显示。
+[P172] 2.3 特征组合法预览（返回表格数据），展示前端没设计，可以忽略，留的口子以后可能会用
+[P173] 接口：POST /audience/feature/preview
+[P174] 用途：在圈选前预览部分用户数据（前 limit 条），用于运营者确认。表格中的 user_id 和 phone_num 已脱敏。
+[P175] 请求参数（limit 为 query 参数）：
+[P176] POST /api/v1/audience/feature/preview?limit=100
+[P177] Body:
+[P178] {
+[P179]   "condition": "arpu > 100 AND user_online < 18",
+[P180]   "fields": ["user_id", "arpu", "city_id"],
+[P181]   "user_id": "demo"
+[P182] }
+[P183] 后端调用链：
+[P184] routes.py -> simple_agents.run_feature_selection(need_preview=True) -> services/audience_selection.feature_selection()
+[P185]     -> 执行预览 SQL，并对敏感字段脱敏
+[P186] 响应示例：
+[P187] {
+[P188]   "fields": ["user_id", "arpu", "city_id"],
+[P189]   "data": [
+[P190]     ["use****001", 120.5, "南京"],
+[P191]     ["use****002", 135.0, "苏州"]
+[P192]   ]
+[P193] }
+[P194] 前端数据存放：用于预览表格（el-table），不需要长期存储。
+[P196] 2.4 产品适配客群法
+[P198] 接口：POST /audience/product
+[P199] 用途：根据产品 ID，圈选符合该产品目标用户类型的客群。
+[P200] 请求参数：
+[P201] {
+[P202]   "product_id": "P001",
+[P203]   "target_count": 5000,
+[P204]   "user_id": "demo"
+[P205] }
+[P206] 后端调用链：
+[P207] routes.py -> simple_agents.run_product_audience() -> services/audience_selection.product_audience()
+[P208]     -> 查询产品表获取 target_user_type -> 映射为 SQL 条件 -> 执行查询
+[P209] 响应示例：
+[P210] {
+[P211]   "audience_ids": ["user_001", ...],
+[P212]   "total": 5000
+[P213] }
+[P214] 前端数据存放：同 2.1。
+[P216] 2.5 导入用户清单法
+[P218] 接口：POST /audience/import
+[P219] 用途：上传 CSV 文件（base64 编码），每行一个 user_id 或手机号，后端匹配数据库中存在的用户。
+[P220] 请求参数：
+[P221] {
+[P222]   "file_content": "dXNlcl8wMDEKdXNlcl8wMDIK...",
+[P223]   "user_id": "demo"
+[P224] }
+[P225] 后端调用链：
+[P226] routes.py -> simple_agents.run_import_audience() -> services/audience_selection.import_audience()
+[P227]     -> base64 解码 -> 调用 _batch_resolve_user_ids() 匹配数据库
+[P228] 响应示例：
+[P229] {
+[P230]   "audience_ids": ["user_001", "user_002", ...],
+[P231]   "total": 1200
+[P232] }
+[P233] 前端数据存放：同 2.1。
+[P235] 3.产品推荐模块
+[P236] 3.1 基于文本推荐产品
+[P238] 接口：POST /product/recommend_by_text
+[P239] 用途：根据用户输入的文本（运营目标、产品描述等），推荐 TOP4 产品。
+[P240] 请求参数：
+[P241] {
+[P242]   "user_input": "我想推广5G流量包给高流量用户",
+[P243]   "user_id": "demo"
+[P244] }
+[P245] 后端调用链：
+[P246] routes.py -> simple_agents.run_recommend_by_text() -> services/product_recommend.recommend_by_text()
+[P247]     -> LLM 生成候选产品名 -> 向量检索产品库 -> 返回产品详情
+[P248] 响应示例：
+[P249] {
+[P250]   "products": [
+[P251]     {
+[P252]       "id": "P001",
+[P253]       "name": "5G尊享流量包(50G)",
+[P254]       "category": "流量包",
+[P255]       "price": "29.00",
+[P256]       "description": "5G高速流量50GB",
+[P257]       "applicable_scope": "全国通用"
+[P258]     },
+[P259]     ...
+[P260]   ]
+[P261] }
+[P262] 前端数据存放：存入组件状态，用于渲染产品卡片列表，放在下方
+[P264] 3.2 基于客群推荐产品—只涉及客群运营页面
+[P265] 客群运营页圈选客群后点击“产品推荐”则调用此接口
+[P266] 接口：POST /product/recommend_by_audience
+[P267] 用途：根据已圈选的客群 ID 列表，推荐 TOP4 产品。
+[P268] 请求参数：
+[P269] {
+[P270]   "audience_ids": ["user_001", "user_002", ...],
+[P271]   "user_input": "希望提升ARPU",
+[P272]   "user_id": "demo"
+[P273] }
+[P274] 后端调用链：
+[P275] routes.py -> simple_agents.run_recommend_by_audience() -> services/product_recommend.recommend_by_audience()
+[P276]     -> 聚合客群特征 -> LLM 生成候选产品名 -> 向量检索匹配产品库
+[P277] 响应示例：同 3.1。
+[P278] 前端数据存放：同 3.1。
+[P279] 3.2 前端搜索推荐产品
+[P280] 
+模糊搜索数据库产品部的名称，选择后替换第一个产品。
+
+[P281] 四、策略生成模块
+[P282] 4.1 生成策略
+[P284] 此处用户输入补充信息后点击“生成策略”调用下方接口获取返回值
+[P285] 接口：POST /strategy/generate
+[P286] 用途：根据产品 ID、客群 ID（可选）、用户输入，生成营销策略（包含名称、类别、活动说明、活动政策、扣费方式、有效期、权益内容、适用条件等）。
+[P287] 请求参数：
+[P288] {
+[P289]   "method": "product_audience",
+[P290]   "product_ids": ["P001"],
+[P291]   "audience_ids": ["user_001", "user_002", ...],
+[P292]   "goal": "提升5G流量包订购率",
+[P293]   "user_id": "demo"
+[P294] }
+[P295] 后端调用链：
+[P296] routes.py -> simple_agents.run_generate_strategy() -> services/strategy_generation.generate_strategy()
+[P297]     -> 查询产品信息 -> 检索历史相似策略 -> LLM 生成策略 JSON -> 保存到 PostgreSQL -> 向量化存储
+[P298] 响应示例：
+[P299] {
+[P300]   "strategy_id": "STR_abc123",
+[P301]   "detail": {
+[P302]     "name": "5G流量包推广策略",
+[P303]     "category": "升级",
+[P304]     "description": "活动说明：充值100元送20元",
+[P305]     "activity_desc": "活动说明：充值100元送20元",
+[P306]     "activity_policy": "优惠力度：8折",
+[P307]     "charge_method": "一次性扣费",
+[P308]     "valid_period": "30天",
+[P309]     "rights_content": "赠送10GB定向流量",
+[P310]     "conditions": "1. 客群年轻化，平均年龄30岁；2. 客群高端化，平均ARPU 150元；...",
+[P311]     "audience_scale": 5234
+[P312]   }
+[P313] }
+[P314] 前端数据存放：
+[P316] strategy_id 存储用于后续执行优化和评估。
+[P317] detail 中的各字段分别绑定到策略配置表单的对应输入框（如策略名称、类别、描述、政策、扣费方式等），供用户二次修改。
+[P319] 五、策略执行优化模块
+[P320] 5.1 执行优化
+[P322] 此处用户输入补充信息后点击“生成策略”调用下方接口获取返回值
+[P323] 接口：POST /execution/optimize
+[P325] 用途：根据策略 ID、产品 ID、客群 ID，生成推荐渠道（2个）、每个渠道2套话术、波次数量、间隔、最佳营销时刻。
+[P326] 请求参数：
+[P327] {
+[P328]   "user_input": "希望提高转化率",
+[P329]   "product_ids": ["P001"],
+[P330]   "strategy_id": "STR_abc123",
+[P331]   "audience_ids": ["user_001", ...],
+[P332]   "user_id": "demo"
+[P333] }
+[P334] 后端调用链：
+[P335] routes.py -> simple_agents.run_optimize_execution() -> services/execution_optimization.optimize_execution()
+[P336]     -> 查询策略、产品 -> 检索历史相似策略 -> LLM 生成执行方案 -> 保存话术和执行计划到数据库
+[P337] 响应示例：
+[P338] {
+[P339]   "channels": [
+[P340]     {
+[P341]       "channel": "短信",
+[P342]       "scripts": ["尊敬的用户，流量包限时优惠...", "亲爱的用户，专属福利..."]
+[P343]     },
+[P344]     {
+[P345]       "channel": "APP推送",
+[P346]       "scripts": ["打开APP领取流量...", "会员日特惠..."]
+[P347]     }
+[P348]   ],
+[P349]   "wave_count": 2,
+[P350]   "wave_interval_hours": 24,
+[P351]   "time_preference": {
+[P352]     "weekdays": ["一", "三", "五"],
+[P353]     "times": ["10:00", "15:00"]
+[P354]   },
+[P355]   "plan_id": "PLAN_xyz",
+[P356]   "script_ids": ["SCR_111", "SCR_222", "SCR_333", "SCR_444"]
+[P357] }
+[P358] 前端数据存放：
+[P359] channels → 渲染两个渠道卡片，支持单选主推渠道。每个渠道下的 scripts 数组用于展示对应的话术卡片（2个），支持单选主推话术。
+[P360] wave_count 和 wave_interval_hours → 用于展示波次配置（如条形图或选择器）。
+[P361] time_preference → 用于展示星期多选和时刻多选。
+[P362] plan_id、script_ids 用于后续发布接口。
+[P364] 六、效果评估模块
+[P365] 6.1 评估策略效果
+[P367] 此处用户输入补充信息后点击“生成策略”调用下方接口获取返回值
+[P369] 接口：POST /evaluation
+[P370] 用途：根据策略 ID，预测转化率、ROI、接通率（基于历史相似策略加权平均）。
+[P372] 请求参数：
+[P373] {
+[P374]   "strategy_id": "STR_abc123",
+[P375]   "user_id": "demo"
+[P376] }
+[P377] 后端调用链：
+[P378] routes.py -> simple_agents.run_evaluate_strategy() -> services/evaluation.evaluate_strategy()
+[P379]     -> 向量检索相似策略 -> 加权平均计算
+[P380] 响应示例：
+[P382] {
+[P383]   "predicted_conversion_rate": 0.1832,
+[P384]   "predicted_roi": 2.15,
+[P385]   "predicted_click_rate": 0.52
+[P386] }
+[P387] 前端数据存放：用于显示三个指标卡片（预测转化率、ROI、接通率），可配合趋势箭头（上升/下降）展示。
+[P389] 七、策略发布模块
+[P390] 7.1 发布策略
+[P391] 这里前端直接调用SQL向数据库插入数据，目前此处可以先不往里插入数据，因为插入数据用于后面运营评估所需
+[P392] 接口：POST /publish
+[P393] 用途：将本次运营的客群清单、策略、产品、执行计划等信息写入 ClickHouse 运营用户清单表（user_strategies），实现运营记录持久化。
+[P394] 请求参数：这
+[P395] {
+[P396]   "strategy_id": "STR_abc123",
+[P397]   "product_ids": ["P001"],
+[P398]   "audience_ids": ["user_001", "user_002", ...],
+[P399]   "plan_id": "PLAN_xyz",
+[P400]   "script_ids": ["SCR_111", "SCR_222", "SCR_333", "SCR_444"],
+[P401]   "user_id": "demo"
+[P402] }
+[P403] 后端调用链：
+[P404] routes.py -> 直接执行 ClickHouse INSERT，不使用智能体。
+[P405] 响应示例：
+[P406] {
+[P407]   "message": "发布成功，已写入 5234 条用户记录"
+[P408] }
+[P409] 前端数据存放：显示成功提示，无需存储。
+[P410] 十、辅助接口
+[P411] 10.1 获取 ClickHouse 可用字段
+[P412] 接口：GET /clickhouse/fields
+[P413] 用途：获取 user_behavior 表的所有字段（已过滤敏感字段），用于前端字段选择。
+[P414] 响应：
+[P415] {
+[P416]   "fields": ["user_id", "arpu", "city_id", "age", "dou", ...]
+[P417] }
+[P418] 10.2 获取产品列表
+[P419] 接口：GET /products
+[P420] 用途：获取所有上架产品。
+[P421] 响应：
+[P422] {
+[P423]   "products": [
+[P424]     {
+[P425]       "id": "P001",
+[P426]       "name": "5G尊享流量包(50G)",
+[P427]       "category": "流量包",
+[P428]       "price": "29.00",
+[P429]       "description": "...",
+[P430]       "applicable_scope": "..."
+[P431]     }
+[P432]   ]
+[P433] }
+[P434] 10.3 获取策略列表
+[P435] 接口：GET /strategies
+[P436] 用途：获取所有已保存的策略。
+[P437] 响应：
+[P438] {
+[P439]   "strategies": [
+[P440]     {
+[P441]       "id": "STR_abc123",
+[P442]       "name": "5G流量包推广策略",
+[P443]       "category": "升级",
+[P444]       "description": "..."
+[P445]     }
+[P446]   ]
+[P447] }
+[P448] 10.4 健康检查
+[P449] 接口：GET /health
+[P450] 响应：{"status":"ok"}
+[P452] 十一、异步任务结果轮询
+[P453] 接口：GET /result/{task_id}
+[P455] 用途：轮询全流程异步任务的执行结果。
+[P456] 响应：
+[P457] 进行中：{"status": "pending"}
+[P458] 成功：{"status": "completed", "data": {...}}
+[P459] 失败：{"status": "failed", "data": {"error": "..."}}
+[P460] 十二、错误处理
+[P461] 所有接口在发生错误时返回 HTTP 4xx/5xx，响应体格式：
+[P462] {
+[P463]   "detail": "具体错误描述"
+[P464] }
+[P465] 前端应捕获并显示错误提示（如 ElMessage.error）。
+
+================================================================================
+TABLES
+================================================================================

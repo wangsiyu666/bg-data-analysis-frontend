@@ -1,0 +1,140 @@
+2026-04-21 09:14:36.097 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x0000022151451BB0>
+2026-04-21 09:14:37.306 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:14:38.726 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:15:02.414 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x0000018A132AA7B0>
+2026-04-21 09:15:03.344 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:15:04.589 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:16:55.882 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x000002048661BEF0>
+2026-04-21 09:16:55.947 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:16:56.345 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:20:41.891 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x000001FAEB44B5F0>
+2026-04-21 09:20:41.966 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:20:42.262 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:21:55.700 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x0000026A9299F830>
+2026-04-21 09:21:55.783 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:21:56.044 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:22:11.622 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x000002B2462C8DD0>
+2026-04-21 09:22:11.678 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:22:11.879 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:22:30.641 | INFO     | main:startup:16 - 后端服务启动中...
+2026-04-21 09:22:30.644 | INFO     | app.services.vanna_service:init_vanna:40 - 开始初始化 Vanna (v0.7.1)...
+2026-04-21 09:22:30.644 | INFO     | main:startup:19 - 启动完成
+2026-04-21 09:22:44.875 | INFO     | app.api.routes:audience_execute:59 - 执行SQL请求: SELECT city_id, sex_id, count(*) AS cnt FROM user_behavior WHERE arpu > 80 GROUP BY city_id, sex_id 
+2026-04-21 09:22:44.876 | INFO     | app.agents.simple_agents:run_execute_sql:21 - 简单调用: 执行SQL, 用户 demo
+2026-04-21 09:22:44.877 | INFO     | app.services.audience_analysis:execute_analysis:21 - 执行SQL: SELECT city_id, sex_id, count(*) AS cnt FROM user_behavior WHERE arpu > 80 GROUP BY city_id, sex_id LIMIT 20...
+2026-04-21 09:22:44.878 | INFO     | app.services.clickhouse_service:execute_sql:25 - 执行 ClickHouse SQL: SELECT city_id, sex_id, count(*) AS cnt FROM user_behavior WHERE arpu > 80 GROUP BY city_id, sex_id LIMIT 20...
+2026-04-21 09:22:47.140 | ERROR    | app.utils.sql_retry:wrapper:22 - SQL 执行失败 (尝试 1/5): Code: 210. 由于目标计算机积极拒绝，无法连接。 (host.docker.internal:8123)
+SQL: SELECT city_id, sex_id, count(*) AS cnt FROM user_behavior WHERE arpu > 80 GROUP BY city_id, sex_id LIMIT 20
+2026-04-21 09:22:47.147 | INFO     | app.services.llm_service:call_llm_async:19 - 调用 Ollama 模型: qwen:7b-chat-q4_0, 提示词长度: 211
+2026-04-21 09:22:47.210 | INFO     | app.api.routes:audience_execute:59 - 执行SQL请求: SELECT
+      countIf(user_online < 6) AS s1,
+      countIf(user_online >= 6 AND user_online < 18) AS
+2026-04-21 09:22:47.212 | INFO     | app.agents.simple_agents:run_execute_sql:21 - 简单调用: 执行SQL, 用户 demo
+2026-04-21 09:22:47.213 | INFO     | app.services.audience_analysis:execute_analysis:21 - 执行SQL: SELECT
+      countIf(user_online < 6) AS s1,
+      countIf(user_online >= 6 AND user_online < 18) AS s2,
+      countIf(user_online >= 18 AND user_online < 36) AS s3,
+      countIf(user_online >= 36 AN...
+2026-04-21 09:22:47.214 | INFO     | app.services.clickhouse_service:execute_sql:25 - 执行 ClickHouse SQL: SELECT
+      countIf(user_online < 6) AS s1,
+      countIf(user_online >= 6 AND user_online < 18) AS s2,
+      countIf(user_online >= 18 AND user_online < 36) AS s3,
+      countIf(user_online >= 36 AN...
+2026-04-21 09:22:49.303 | ERROR    | app.utils.sql_retry:wrapper:22 - SQL 执行失败 (尝试 1/5): Code: 210. 由于目标计算机积极拒绝，无法连接。 (host.docker.internal:8123)
+SQL: SELECT
+      countIf(user_online < 6) AS s1,
+      countIf(user_online >= 6 AND user_online < 18) AS s2,
+      countIf(user_online >= 18 AND user_online < 36) AS s3,
+      countIf(user_online >= 36 AND user_online < 60) AS s4,
+      countIf(user_online >= 60) AS s5
+      FROM user_behavior WHERE arpu > 80
+2026-04-21 09:22:49.305 | INFO     | app.api.routes:audience_execute:59 - 执行SQL请求: SELECT
+      sum(is_rhtc) AS 粘性,
+      avg(arpu) AS 价值,
+      sum(is_ywsk) AS 竞抢,
+      sum(is_ts) A
+2026-04-21 09:22:49.305 | INFO     | app.agents.simple_agents:run_execute_sql:21 - 简单调用: 执行SQL, 用户 demo
+2026-04-21 09:22:49.305 | INFO     | app.services.audience_analysis:execute_analysis:21 - 执行SQL: SELECT
+      sum(is_rhtc) AS 粘性,
+      avg(arpu) AS 价值,
+      sum(is_ywsk) AS 竞抢,
+      sum(is_ts) AS 感知,
+      sum(active_mark) AS 活跃,
+      avg(call_opp_counts1) AS 传播
+      FROM user_behavior WHERE...
+2026-04-21 09:22:49.305 | INFO     | app.services.clickhouse_service:execute_sql:25 - 执行 ClickHouse SQL: SELECT
+      sum(is_rhtc) AS 粘性,
+      avg(arpu) AS 价值,
+      sum(is_ywsk) AS 竞抢,
+      sum(is_ts) AS 感知,
+      sum(active_mark) AS 活跃,
+      avg(call_opp_counts1) AS 传播
+      FROM user_behavior WHERE...
+2026-04-21 09:22:51.378 | ERROR    | app.utils.sql_retry:wrapper:22 - SQL 执行失败 (尝试 1/5): Code: 210. 由于目标计算机积极拒绝，无法连接。 (host.docker.internal:8123)
+SQL: SELECT
+      sum(is_rhtc) AS 粘性,
+      avg(arpu) AS 价值,
+      sum(is_ywsk) AS 竞抢,
+      sum(is_ts) AS 感知,
+      sum(active_mark) AS 活跃,
+      avg(call_opp_counts1) AS 传播
+      FROM user_behavior WHERE arpu > 80
+2026-04-21 09:22:51.380 | INFO     | app.api.routes:audience_execute:59 - 执行SQL请求: SELECT
+      CASE
+        WHEN user_online < 6 THEN '入网期'
+        WHEN user_online >= 6 AND user_onl
+2026-04-21 09:22:51.380 | INFO     | app.agents.simple_agents:run_execute_sql:21 - 简单调用: 执行SQL, 用户 demo
+2026-04-21 09:22:51.380 | INFO     | app.services.audience_analysis:execute_analysis:21 - 执行SQL: SELECT
+      CASE
+        WHEN user_online < 6 THEN '入网期'
+        WHEN user_online >= 6 AND user_online < 18 THEN '成长期'
+        WHEN user_online >= 18 AND user_online < 36 THEN '成熟期'
+        WHEN user...
+2026-04-21 09:22:51.381 | INFO     | app.services.clickhouse_service:execute_sql:25 - 执行 ClickHouse SQL: SELECT
+      CASE
+        WHEN user_online < 6 THEN '入网期'
+        WHEN user_online >= 6 AND user_online < 18 THEN '成长期'
+        WHEN user_online >= 18 AND user_online < 36 THEN '成熟期'
+        WHEN user...
+2026-04-21 09:22:53.431 | ERROR    | app.utils.sql_retry:wrapper:22 - SQL 执行失败 (尝试 1/5): Code: 210. 由于目标计算机积极拒绝，无法连接。 (host.docker.internal:8123)
+SQL: SELECT
+      CASE
+        WHEN user_online < 6 THEN '入网期'
+        WHEN user_online >= 6 AND user_online < 18 THEN '成长期'
+        WHEN user_online >= 18 AND user_online < 36 THEN '成熟期'
+        WHEN user_online >= 36 AND user_online < 60 THEN '异动期'
+        ELSE '离网期'
+      END AS stage,
+      countIf(arpu > 80) AS high,
+      countIf(arpu <= 80) AS low
+      FROM user_behavior WHERE arpu > 80
+      GROUP BY stage
+2026-04-21 09:22:53.431 | INFO     | app.services.llm_service:call_llm_async:19 - 调用 Ollama 模型: qwen:7b-chat-q4_0, 提示词长度: 409
+2026-04-21 09:22:53.456 | INFO     | app.services.llm_service:call_llm_async:19 - 调用 Ollama 模型: qwen:7b-chat-q4_0, 提示词长度: 313
+2026-04-21 09:22:53.504 | INFO     | app.services.llm_service:call_llm_async:19 - 调用 Ollama 模型: qwen:7b-chat-q4_0, 提示词长度: 516
+2026-04-21 09:23:03.671 | ERROR    | app.services.llm_service:call_llm_async:34 - LLM 调用失败: Server error '502 Bad Gateway' for url 'http://host.docker.internal:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-04-21 09:23:03.676 | ERROR    | app.services.llm_service:call_llm_async:34 - LLM 调用失败: Server error '502 Bad Gateway' for url 'http://host.docker.internal:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-04-21 09:23:03.680 | ERROR    | app.services.llm_service:call_llm_async:34 - LLM 调用失败: Server error '502 Bad Gateway' for url 'http://host.docker.internal:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-04-21 09:23:03.682 | ERROR    | app.services.llm_service:call_llm_async:34 - LLM 调用失败: Server error '502 Bad Gateway' for url 'http://host.docker.internal:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-04-21 09:23:30.908 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x000001FA0C3FB740>
+2026-04-21 09:23:30.987 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:23:31.312 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:23:48.962 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x000002883DCAE000>
+2026-04-21 09:23:49.035 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:23:49.323 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:24:13.648 | INFO     | main:startup:16 - 后端服务启动中...
+2026-04-21 09:24:13.650 | INFO     | app.services.vanna_service:init_vanna:40 - 开始初始化 Vanna (v0.7.1)...
+2026-04-21 09:24:13.650 | INFO     | main:startup:19 - 启动完成
+2026-04-21 09:27:13.740 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x000001EE9DBDB9E0>
+2026-04-21 09:27:13.813 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:27:14.102 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:27:32.689 | INFO     | app.core.config:<module>:24 - 配置加载完成: <app.core.config.Settings object at 0x00000187F0BB4290>
+2026-04-21 09:27:32.743 | INFO     | app.core.database:<module>:18 - 数据库引擎初始化完成
+2026-04-21 09:27:32.959 | INFO     | app.tasks.celery_app:<module>:24 - Celery 初始化完成，broker: redis://host.docker.internal:6379/0
+2026-04-21 09:27:46.425 | INFO     | main:startup:16 - 后端服务启动中...
+2026-04-21 09:27:46.426 | INFO     | app.services.vanna_service:init_vanna:40 - 开始初始化 Vanna (v0.7.1)...
+2026-04-21 09:27:46.426 | INFO     | main:startup:19 - 启动完成
