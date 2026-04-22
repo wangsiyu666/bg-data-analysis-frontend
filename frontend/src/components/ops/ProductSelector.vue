@@ -46,7 +46,7 @@
         :class="[{ selected: isSelected(p) }, 'theme-' + (idx % 4)]"
         @click="toggleSelect(p)"
       >
-        <div class="check" v-if="isSelected(p)">
+        <div class="check" v-if="isSelected(p)">  
           <svg viewBox="0 0 16 16" width="12" height="12" fill="none"><path d="M3 8l3 3 6-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="p-head">
@@ -60,13 +60,13 @@
             <div class="p-name">{{ p.name }}</div>
             <div class="p-cat">{{ p.category }}</div>
           </div>
-          <div class="p-price">¥{{ p.price }}</div>
+         
         </div>
         <div class="p-divider"></div>
         <div class="p-info">
-          <div><span class="lbl">产品说明</span></div>
+          <div><span class="lbl">产品售价</span>  <span style="font-weight: bold;">¥{{p.price}}</span></div>
           <div><span class="lbl">适用范围</span><span class="val">{{ p.scope }}</span></div>
-          <div class="p-desc">{{ p.desc }}</div>
+          <div><span class="lbl">产品描述</span><span class="val">{{ p.desc }}</span></div>
         </div>
         <div class="p-footer">查看详情</div>
       </div>
@@ -325,7 +325,8 @@ async function handleRecommendBySegment() {
   line-height: 1.8;
   .lbl {
     color: #909399;
-    margin-right: 6px;
+    margin-right: 170px;
+    margin-left: 10px;
   }
   .val {
     color: #303133;
@@ -345,9 +346,13 @@ async function handleRecommendBySegment() {
 }
 .p-footer {
   margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px dashed #ebeef5;
-  text-align: center;
+  height: 25px;
+  border: 1px solid #bcdcff;
+  border-radius: 12px;
+  background: #f5faff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
   color: #1e6ecf;
 }

@@ -6,114 +6,123 @@
     </div>
 
     <!-- 策略内容详细配置 -->
-    <div class="block">
+    <div class="block strategy-config-block">
       <div class="block-title">策略内容详细配置</div>
-      <el-row :gutter="16">
-        <el-col :span="12">
+      <div class="strategy-config-grid">
+        <div class="config-left">
           <div class="field-label">策略名称</div>
           <el-input v-model="strategy.name" placeholder="（自动生成后可修改）" />
-        </el-col>
-        <el-col :span="12">
-          <div class="field-label">策略类别</div>
-          <el-checkbox-group v-model="strategy.categories">
-            <el-checkbox label="挽留" />
-            <el-checkbox label="升级" />
-            <el-checkbox label="交叉销售" />
-            <el-checkbox label="新客拉新" />
-          </el-checkbox-group>
-        </el-col>
-      </el-row>
 
-      <div class="field-label" style="margin-top: 12px">适用条件说明</div>
-      <el-input
-        v-model="strategy.condition"
-        type="textarea"
-        :rows="2"
-        placeholder="若无圈选客群此处为空"
-      />
+          <div class="field-label mt-12">策略类别</div>
+          <el-select v-model="categoryValue" placeholder="请选择策略类别" style="width: 100%">
+            <el-option label="挽留" value="挽留" />
+            <el-option label="升级" value="升级" />
+            <el-option label="交叉销售" value="交叉销售" />
+            <el-option label="新客拉新" value="新客拉新" />
+          </el-select>
 
-      <el-row :gutter="16" style="margin-top: 12px">
-        <el-col :span="12">
-          <div class="field-label">策略描述</div>
-          <el-input v-model="strategy.descDetail.desc" type="textarea" :rows="2" />
-        </el-col>
-        <el-col :span="12">
-          <div class="field-label">活动扣费方式</div>
-          <el-input v-model="strategy.descDetail.paymentMethod" type="textarea" :rows="2" />
-        </el-col>
-      </el-row>
-      <el-row :gutter="16" style="margin-top: 12px">
-        <el-col :span="8">
-          <div class="field-label">关联产品</div>
-          <el-input v-model="strategy.descDetail.relatedProducts" />
-        </el-col>
-        <el-col :span="8">
-          <div class="field-label">权益内容</div>
-          <el-input v-model="strategy.descDetail.benefits" />
-        </el-col>
-        <el-col :span="8">
-          <div class="field-label">有效期</div>
-          <el-input v-model="strategy.descDetail.validity" />
-        </el-col>
-      </el-row>
-      <el-row :gutter="16" style="margin-top: 12px">
-        <el-col :span="12">
-          <div class="field-label">预计 ARPU 提升值</div>
-          <div class="metric-box blue-text"> {{ strategy.expectedArpuLift || '--' }} </div>
-        </el-col>
-        <el-col :span="12">
-          <div class="field-label">客群规模确认</div>
-          <div class="metric-box dark-bg"> {{ (strategy.segmentSize || 0).toLocaleString() }} 人 </div>
-        </el-col>
-      </el-row>
+          <div class="field-label mt-12">适用条件说明</div>
+          <el-input
+            v-model="strategy.condition"
+            type="textarea"
+            :rows="5"
+            placeholder="若无圈选客群此处为空"
+          />
+        </div>
+
+        <div class="config-right">
+          <div class="right-card-title">策略详细版（活动策略）</div>
+          <div class="detail-card">
+            <div class="detail-line">
+              <span class="detail-label">策略描述:</span>
+              <span class="detail-value">{{ strategy.descDetail.desc || '--' }}</span>
+            </div>
+            <div class="detail-line">
+              <span class="detail-label">扣费比例:</span>
+              <span class="detail-value">{{ strategy.descDetail.paymentMethod || '--' }}</span>
+            </div>
+            <div class="detail-line">
+              <span class="detail-label">关联产品:</span>
+              <span class="detail-value">{{ strategy.descDetail.relatedProducts || '--' }}</span>
+            </div>
+            <div class="detail-line">
+              <span class="detail-label">权益内容:</span>
+              <span class="detail-value">{{ strategy.descDetail.benefits || '--' }}</span>
+            </div>
+            <div class="detail-line detail-line-arpu">
+              <span class="detail-label">预计 ARPU提升值:</span>
+              <span class="detail-value detail-arpu">{{ strategy.expectedArpuLift || '--' }}</span>
+            </div>
+          </div>
+          <div class="field-label mt-12">客群规模确认</div>
+          <div class="metric-box dark-bg">
+            <span class="metric-label">有效库内人数</span>
+            <span class="metric-num">{{ (strategy.segmentSize || 0).toLocaleString() }}</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 执行渠道与话术 -->
     <div class="block">
       <div class="block-title">执行渠道与话术</div>
-      <div class="sub-title">推荐渠道</div>
-      <div class="channel-cards">
-        <div
-          v-for="ch in execution.channels"
-          :key="ch.id"
-          class="ch-card"
-          :class="{ selected: selectedChannelId === ch.id }"
-          @click="selectChannel(ch)"
-        >
-          <div class="check" v-if="selectedChannelId === ch.id">✓</div>
-          <div class="ch-icon">{{ iconFor(ch) }}</div>
-          <div class="ch-name">{{ ch.name }}</div>
-          <div v-if="selectedChannelId === ch.id" class="tag-main">主推荐渠道</div>
-          <div v-else class="tag-rank">TOP{{ ch.rank }}</div>
-        </div>
-        <div v-if="!execution.channels.length" class="empty">点击"开始生成策略"查看推荐渠道</div>
-      </div>
+      <div class="exec-grid">
+        <div class="exec-left">
+          <div class="sub-title">推荐渠道</div>
+          <div class="channel-cards">
+            <div
+              v-for="ch in execution.channels"
+              :key="ch.id"
+              class="ch-card"
+              :class="{ selected: selectedChannelId === ch.id }"
+              @click="selectChannel(ch)"
+            >
+              <div class="check" v-if="selectedChannelId === ch.id">✓</div>
+              <div class="ch-icon">{{ iconFor(ch) }}</div>
+              <div class="ch-name">{{ ch.name }}</div>
+              <div v-if="selectedChannelId === ch.id" class="tag-main">主推荐渠道</div>
+              <div v-else class="tag-rank">TOP{{ ch.rank }}</div>
+            </div>
+            <div v-if="!execution.channels.length" class="empty">点击"开始生成策略"查看推荐渠道</div>
+          </div>
 
-      <div class="sub-title">AI 多版本话术对比</div>
-      <div class="script-cards">
-        <div
-          v-for="s in currentScripts"
-          :key="s.id"
-          class="s-card"
-          :class="{ selected: selectedScriptId === s.id }"
-          @click="selectScript(s)"
-        >
-          <div class="check" v-if="selectedScriptId === s.id">✓</div>
-          <div class="s-title">{{ s.title }}</div>
-          <div class="s-content">{{ s.content }}</div>
-          <div v-if="selectedScriptId === s.id" class="tag-main">主推话术</div>
+          <div class="sub-title">AI 多版本话术对比</div>
+          <div class="script-cards">
+            <div
+              v-for="s in currentScripts"
+              :key="s.id"
+              class="s-card"
+              :class="{ selected: selectedScriptId === s.id }"
+              @click="selectScript(s)"
+            >
+              <div class="check" v-if="selectedScriptId === s.id">✓</div>
+              <div class="s-title">{{ s.title }}</div>
+              <div class="s-content">{{ s.content }}</div>
+              <div v-if="selectedScriptId === s.id" class="tag-main">主推话术</div>
+            </div>
+            <div v-if="!currentScripts.length" class="empty">请先选择推荐渠道</div>
+          </div>
         </div>
-        <div v-if="!currentScripts.length" class="empty">请先选择推荐渠道</div>
-      </div>
 
-      <div class="sub-title">营销调度设置</div>
-      <el-row :gutter="16">
-        <el-col :span="10">
-          <div class="field-label">营销频率</div>
-          <EChart :option="frequencyOption" height="120px" />
-        </el-col>
-        <el-col :span="14">
-          <div class="field-label">AI 最佳营销时机建议</div>
+        <div class="exec-right">
+          <div class="exec-right-title">
+            <span class="dot">◆</span>
+            <span>营销调度设置</span>
+          </div>
+          <div class="freq-head">
+            <div class="field-label">{{ frequencyLabel }}</div>
+            <div class="freq-value">{{ frequencyValueText }}</div>
+          </div>
+          <div class="freq-track">
+            <div class="freq-track-active" :style="{ width: `${frequencyProgress}%` }"></div>
+          </div>
+          <div class="freq-levels">
+            <span>保守 (1次)</span>
+            <span>标准</span>
+            <span>激进 (4次)</span>
+          </div>
+
+          <div class="field-label mt-12">AI 最佳营销时机建议</div>
           <div class="week-bars">
             <div
               v-for="(w, idx) in weekLabels"
@@ -121,18 +130,16 @@
               class="week-bar"
               :class="{ active: bestWeekdays.includes(idx + 1) }"
             >
-              <div class="bar-fill" :style="{ height: bestWeekdays.includes(idx + 1) ? '85%' : '35%' }"></div>
+              <div class="bar-fill" :style="{ height: `${bestWeekdays.includes(idx + 1) ? 58 : 26}px` }"></div>
               <div class="bar-label">{{ w }}</div>
             </div>
           </div>
-          <el-input
-            v-model="execution.bestTime.label"
-            placeholder="最佳营销时刻将在生成后展现"
-            readonly
-            class="best-time-input"
-          />
-        </el-col>
-      </el-row>
+          <div class="ai-conclusion">
+            <span class="ai-prefix">AI 结论：</span>
+            <span class="ai-main">{{ execution.bestTime.label || '请先点击生成策略' }}</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- 策略执行效果预测大屏 -->
@@ -236,7 +243,7 @@ const strategy = reactive({
 const execution = reactive({
   channels: [],
   scripts: {},
-  frequency: { level: '标准', times: 2, options: [] },
+  frequency: { level: '标准', times: 0, options: [] },
   bestTime: { weekdays: [], label: '' }
 })
 
@@ -292,6 +299,18 @@ const currentScripts = computed(() => {
 })
 
 const bestWeekdays = computed(() => execution.bestTime?.weekdays || [])
+const frequencyLabel = computed(() => '营销频率（月度上限）')
+const frequencyValueText = computed(() => `${execution.frequency?.times || 0} 次 / 月`)
+const frequencyProgress = computed(() => {
+  const times = Number(execution.frequency?.times || 0)
+  return Math.max(0, Math.min(100, (times / 4) * 100))
+})
+const categoryValue = computed({
+  get: () => strategy.categories?.[0] || '',
+  set: (v) => {
+    strategy.categories = v ? [v] : []
+  }
+})
 
 function iconFor(ch) {
   const m = { app: '📱', sms: '✉️', wechat: '🗨️', outcall: '📞', email: '📧' }
@@ -309,29 +328,40 @@ function selectScript(s) {
 
 const frequencyOption = computed(() => {
   const level = execution.frequency?.level || '标准'
-  const opts = execution.frequency?.options?.length
-    ? execution.frequency.options
-    : [
-        { label: '保守', times: 1 },
-        { label: '标准', times: 2 },
-        { label: '激进', times: 4 }
-      ]
+  const levelTimes = { 保守: 1, 标准: 2, 激进: 4 }
+  const opts = [
+    { label: '保守（1次）', key: '保守', times: 1 },
+    { label: '标准（2次）', key: '标准', times: 2 },
+    { label: '激进（4次）', key: '激进', times: 4 }
+  ]
   return {
     tooltip: { trigger: 'axis' },
-    grid: { left: 60, right: 20, top: 10, bottom: 20 },
-    xAxis: { type: 'value', max: 5, axisLabel: { show: false }, splitLine: { show: false } },
-    yAxis: { type: 'category', data: opts.map((o) => `${o.label}(${o.times}次)`) },
+    grid: { left: 94, right: 20, top: 8, bottom: 20 },
+    xAxis: { type: 'value', max: 4, axisLabel: { show: false }, splitLine: { show: false } },
+    yAxis: { type: 'category', data: opts.map((o) => o.label) },
     series: [
       {
         type: 'bar',
+        stack: 'freq',
         data: opts.map((o) => ({
-          value: o.times,
+          value: o.key === level ? (levelTimes[level] || o.times) : o.times,
           itemStyle: {
-            color: o.label === level ? '#1e6ecf' : '#c9d4e2',
+            color: o.key === level ? '#1e6ecf' : '#c9d4e2',
             borderRadius: [0, 4, 4, 0]
           }
         })),
         label: { show: true, position: 'right', formatter: '{c}', color: '#1e6ecf', fontWeight: 700 },
+        barWidth: 14
+      },
+      {
+        type: 'bar',
+        stack: 'freq',
+        silent: true,
+        data: opts.map((o) => Math.max(0, 4 - (o.key === level ? (levelTimes[level] || o.times) : o.times))),
+        itemStyle: {
+          color: '#e9edf4',
+          borderRadius: [0, 4, 4, 0]
+        },
         barWidth: 14
       }
     ]
@@ -452,25 +482,142 @@ async function handlePublish() {
   color: #606266;
   margin: 12px 0 6px;
 }
+.exec-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+  gap: 14px;
+}
+.exec-left,
+.exec-right {
+  background: #f8fafc;
+  border: 1px solid #e8edf5;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.exec-right-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #303133;
+  margin-bottom: 12px;
+  .dot {
+    color: #6aa3ff;
+    font-size: 12px;
+  }
+}
 .field-label {
   font-size: 13px;
   font-weight: 700;
   color: #303133;
   margin-bottom: 4px;
 }
+.freq-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.freq-text {
+  font-size: 12px;
+  color: #606266;
+  font-weight: 700;
+}
+.freq-value {
+  font-size: 30px;
+  color: #1e6ecf;
+  font-weight: 700;
+  line-height: 1;
+}
+.freq-track {
+  height: 10px;
+  background: #edf1f6;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.freq-track-active {
+  height: 100%;
+  background: linear-gradient(90deg, #70a9e8, #2f62d9);
+}
+.freq-levels {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #9aa3b2;
+  font-size: 11px;
+}
 .metric-box {
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 20px;
   font-weight: 700;
-  &.blue-text {
-    background: #f5f7fa;
-    color: #1e6ecf;
-  }
   &.dark-bg {
-    background: linear-gradient(90deg, #1e6ecf, #4a90e2);
+    background: #1f3f9e;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+}
+.metric-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.metric-num {
+  font-size: 30px;
+  line-height: 1;
+}
+.mt-12 {
+  margin-top: 12px;
+}
+.strategy-config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.config-right {
+  padding: 0;
+}
+.right-card-title {
+  font-size: 13px;
+  color: #303133;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.detail-card {
+  border: 1px solid #e5e7eb;
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.detail-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: #606266;
+  line-height: 1.9;
+}
+.detail-label {
+  color: #909399;
+  white-space: nowrap;
+}
+.detail-value {
+  color: #303133;
+  text-align: right;
+  font-weight: 700;
+}
+.detail-line-arpu {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid #dfe3e8;
+}
+.detail-arpu {
+  color: #1e6ecf;
+  font-weight: 700;
 }
 .channel-cards,
 .script-cards {
@@ -481,7 +628,7 @@ async function handlePublish() {
   grid-template-columns: 1fr 1fr;
 }
 .script-cards {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .ch-card,
 .s-card {
@@ -571,12 +718,12 @@ async function handlePublish() {
 .week-bars {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
-  height: 100px;
+  gap: 8px;
+  height: 116px;
   align-items: end;
-  background: #f0f6ff;
+  background: #f5f7fb;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 .week-bar {
   display: flex;
@@ -584,32 +731,43 @@ async function handlePublish() {
   align-items: center;
   height: 100%;
   justify-content: end;
-  gap: 4px;
+  gap: 6px;
+  background: #eef1f6;
+  border-radius: 8px;
+  padding: 0 0 6px;
   .bar-fill {
-    width: 70%;
+    width: 100%;
     background: #c9d4e2;
-    border-radius: 4px 4px 0 0;
+    border-radius: 0;
     transition: all 0.4s;
   }
   .bar-label {
     font-size: 10px;
-    color: #606266;
+    color: #7d8697;
   }
   &.active .bar-fill {
-    background: linear-gradient(180deg, #1e6ecf, #4a90e2);
+    background: linear-gradient(180deg, #3f8bf1, #2f62d9);
   }
   &.active .bar-label {
     color: #1e6ecf;
     font-weight: 700;
   }
 }
-.best-time-input {
+.ai-conclusion {
   margin-top: 10px;
-  :deep(.el-input__inner) {
-    background: #f5f7fa;
-    font-weight: 700;
-    color: #1e6ecf;
-  }
+  background: #f1f4f9;
+  border-radius: 6px;
+  color: #6f798a;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 10px;
+}
+.ai-prefix {
+  color: #7e8898;
+}
+.ai-main {
+  color: #2f62d9;
+  font-weight: 700;
 }
 .dark-block {
   background: linear-gradient(135deg, #0a1f3d, #1a3358);

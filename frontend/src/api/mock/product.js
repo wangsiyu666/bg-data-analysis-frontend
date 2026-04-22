@@ -7,7 +7,7 @@ const BASE_PRODUCTS = [
     category: '5G套餐',
     price: '128元/月',
     scope: '全国通用',
-    desc: '100GB流通+1000分钟通话+视频会员，适用于商务人群'
+    desc: '5G全速体验'
   },
   {
     id: 'P5G02',
@@ -39,7 +39,7 @@ const BASE_PRODUCTS = [
     category: '权益包',
     price: '29元/月',
     scope: '商务出差用户',
-    desc: '机场VIP休息+打车券200元+机票返现'
+    desc: '全网追剧不设限'
   },
   {
     id: 'P5G03',
@@ -55,7 +55,7 @@ const BASE_PRODUCTS = [
     category: '融合套餐',
     price: '199元/月',
     scope: '家庭/融合',
-    desc: '千兆宽带+2张5G副卡+IPTV+智能家居终端'
+    desc: '普通家庭升级'
   },
   {
     id: 'PQY03',
@@ -63,7 +63,7 @@ const BASE_PRODUCTS = [
     category: '权益包',
     price: '39元/月',
     scope: '中老年用户',
-    desc: '线上名医问诊+体检折扣+健康档案'
+    desc: '专展管家服务'
   }
 ]
 

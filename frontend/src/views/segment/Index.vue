@@ -133,7 +133,7 @@
         <div class="diag-card">
           <div class="diag-label">客群诊断</div>
           <div class="diag-body">
-            <EChart :option="radarOption" height="260px" />
+            <EChart :option="radarOption" height="300px" />
             <el-table class="diag-table" :data="analysis.diagnosisTable" size="small" border style="flex:1">
               <el-table-column prop="period" label="阶段" width="88" />
               <el-table-column prop="sticky" label="粘性" width="74" />
@@ -217,9 +217,10 @@ const radarOption = computed(() => ({
   radar: {
     indicator: analysis.radar.indicator || [],
     splitNumber: 4,
-    radius: '65%',
+    radius: '74%',
+    axisLine: { show: false },
     axisName: { color: '#303133', fontSize: 12, fontWeight: 600 },
-    splitLine: { lineStyle: { color: '#dce3ef' } },
+    splitLine: { show: false },
     splitArea: { show: false }
   },
   series: [
@@ -676,7 +677,7 @@ onMounted(async () => {
 
 /* 诊断卡 */
 .diag-card {
-  background: #fff;
+  background: #f2f2f2;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -725,5 +726,8 @@ onMounted(async () => {
 }
 :deep(.diag-table .el-table__cell) {
   border-color: #cfcfcf;
+}
+:deep(.diag-table .el-table__body td:first-child) {
+  background: #ececec;
 }
 </style>

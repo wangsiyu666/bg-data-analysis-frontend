@@ -34,17 +34,17 @@ export const mockStrategy = {
     const pNames = products.map((p) => p.name).join(',')
     return {
       id: 'S' + Date.now(),
-      name: `AI智能${products[0]?.category || '套餐'}精准运营策略`,
-      categories: ['挽留', '升级', '交叉销售'],
-      condition: segment?.condition || '若无圈选客群此处为空',
+      name: '策略名称',
+      categories: ['策略类别'],
+      condition: '适用条件说明',
       descDetail: {
-        desc: `基于AI智能体分析，面向${segment?.name || '目标客群'}推荐${pNames || '主打产品'}，提升ARPU和留存。`,
-        paymentMethod: '首月免费，次月起按月扣费，支持话费/余额/微信支付',
-        relatedProducts: pNames,
-        benefits: '首月0元体验+定向流量10GB+视频会员1个月',
-        validity: '2026-01-01 至 2026-12-31'
+        desc: '策略描述',
+        paymentMethod: '扣费比例',
+        relatedProducts: '关联产品',
+        benefits: '权益内容',
+        validity: '有效期'
       },
-      expectedArpuLift: (Math.random() * 30 + 10).toFixed(1) + '/月',
+      expectedArpuLift: '预计ARPU提升值',
       segmentSize: segment?.count || 0,
       userText: text
     }
@@ -54,8 +54,8 @@ export const mockStrategy = {
     return {
       strategyId,
       channels: [
-        { id: 'app', name: 'APP推送', icon: 'Cellphone', rank: 1 },
-        { id: 'sms', name: '短信', icon: 'ChatDotRound', rank: 2 }
+        { id: 'app', name: 'APP推送+加短信', icon: 'Cellphone', rank: 1 },
+        { id: 'sms', name: '外呼坐席（10086）', icon: 'ChatDotRound', rank: 2 }
       ],
       scripts: {
         app: [

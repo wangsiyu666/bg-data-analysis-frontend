@@ -37,14 +37,7 @@
         >
           <el-option v-for="s in savedSegments" :key="s.id" :label="s.name" :value="s.name" />
         </el-select>
-        <div class="mc-list" v-if="savedSegments.length">
-          <div v-for="s in savedSegments.slice(0, 5)" :key="s.id" class="mc-li">
-            <el-checkbox
-              :model-value="condition.segmentName === s.name"
-              @change="condition.segmentName = s.name"
-            >{{ s.name }}</el-checkbox>
-          </div>
-        </div>
+      
         <div class="mc-count">圈选用户数：<strong>{{ condition.count.toLocaleString() }}</strong> 人</div>
         <div class="mc-actions">
           <button class="btn-ghost" @click="cancelMethod('condition')">取消圈选</button>
@@ -62,10 +55,17 @@
           </div>
           <div class="mc-title">种子用户扩散方式</div>
         </div>
-        <div class="mc-sub">目标客群量</div>
-        <el-input-number v-model="seed.target" :min="1000" :step="10000" style="width: 100%" size="default" controls-position="right" />
+        <div class="mc-target-row">
+          <div class="mc-sub mc-sub-strong">目标客群量</div>
+          <el-input
+            v-model="seed.target"
+            placeholder="目标用户数"
+            style="width: 100%"
+            size="default"
+          />
+        </div>
         <div class="mc-box">
-          <textarea v-model="seed.seeds" rows="2" placeholder="请输入user_id、电话号、email等字符串；多值用分号分隔。" />
+          <textarea v-model="seed.seeds" rows="2" placeholder="请输入种子用户的电话号、user_id，并使用“;”分割。" />
           <button class="mc-inline-btn" :disabled="seed.compLoading" @click="runSeedCompute">
             {{ seed.compLoading ? '计算中' : '开始计算' }}
           </button>
@@ -86,8 +86,15 @@
           <div class="mc-title">产品推荐客群方式</div>
         </div>
         <div class="mc-sub">目标客群量</div>
-        <el-input-number v-model="productSeg.target" :min="1000" :step="10000" style="width: 100%" size="default" controls-position="right" />
-        <div class="mc-ring">
+    <div class="mc-target-row">
+          <div class="mc-sub mc-sub-strong">目标客群量</div>
+          <el-input
+            v-model="seed.target"
+            placeholder="目标用户数"
+            style="width: 100%"
+            size="default"
+          />
+        </div>        <div class="mc-ring">
           <svg viewBox="0 0 80 80" width="80" height="80">
             <circle cx="40" cy="40" r="30" stroke="#d8e4f3" stroke-width="6" fill="none" />
             <circle cx="40" cy="40" r="30" stroke="#1e6ecf" stroke-width="6" fill="none"
@@ -160,8 +167,8 @@ const store = useSegmentStore()
 const savedSegments = computed(() => store.savedSegments)
 
 const condition = reactive({ segmentName: '', count: 0, audienceIds: [], loading: false, confirmed: false })
-const seed = reactive({ target: 100000, seeds: '', count: 0, audienceIds: [], compLoading: false, confirmed: false })
-const productSeg = reactive({ target: 100000, count: 0, audienceIds: [], loading: false, confirmed: false })
+const seed = reactive({ target: '', seeds: '', count: 0, audienceIds: [], compLoading: false, confirmed: false })
+const productSeg = reactive({ target: '', count: 0, audienceIds: [], loading: false, confirmed: false })
 const upload = reactive({ file: null, count: 0, audienceIds: [], loading: false, confirmed: false })
 
 const methodCount = computed(() => (props.showProductRecommend ? 4 : 3))
@@ -269,7 +276,8 @@ async function runSeedCompute() {
   }
   seed.compLoading = true
   try {
-    const res = await seedExpand({ seeds: seed.seeds, target: seed.target })
+    const target = Number(seed.target) || 100000
+    const res = await seedExpand({ seeds: seed.seeds, target })
     seed.count = res.count
     seed.audienceIds = res.audienceIds || []
     ElMessage.success(`已扩散至 ${res.count.toLocaleString()} 人`)
@@ -441,6 +449,17 @@ onMounted(async () => {
   color: #606266;
   margin-top: 2px;
 }
+.mc-sub-strong {
+  font-weight: 700;
+  color: #303133;
+  margin-top: 0;
+  white-space: nowrap;
+}
+.mc-target-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .mc-sub-small {
   font-size: 11px;
   color: #909399;
@@ -474,9 +493,9 @@ onMounted(async () => {
 }
 .mc-box {
   position: relative;
-  background: #fff;
+  background: #f2f3f5;
   border: 1px solid #dce3ef;
-  border-radius: 4px;
+  border-radius: 16px;
   padding: 6px 8px 30px;
   textarea {
     width: 100%;
